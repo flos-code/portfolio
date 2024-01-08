@@ -1,0 +1,75 @@
+@import "../../styles.scss";
+
+.atfContainer {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.atfContainerTop {
+  margin-top: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h1 {
+    text-align: center;
+    font-family: "Syne";
+    font-size: 128px;
+    font-weight: 800;
+    letter-spacing: -3.2px;
+    margin-block: unset;
+    margin-top: -36px;
+  }
+
+  .underline {
+    display: flex;
+    align-items: center;
+
+    span {
+      color: $accentColor;
+      text-align: center;
+      font-size: 48px;
+      font-weight: 700;
+      letter-spacing: -1.2px;
+      margin: 0 8px;
+    }
+  }
+}
+
+.atfContainerBottom {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 100px;
+  margin-bottom: 116px;
+
+  .rotatedMail {
+    transform: rotate(-90deg);
+
+    span {
+      font-size: 23px;
+      font-weight: 300;
+      letter-spacing: -0.575px;
+    }
+  }
+
+  .scrollArrow {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+    img {
+      padding: 10px;
+      width: 96px;
+      height: 160px;
+    }
+
+    span {
+      text-align: center;
+      font-size: 23px;
+      font-weight: 300;
+      letter-spacing: -0.575px;
+    }
+  }
+}

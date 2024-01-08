@@ -8,6 +8,7 @@ import { SkillsComponent } from './skills/skills.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { ContactComponent } from './contact/contact.component';
 import { FooterComponent } from './footer/footer.component';
+import { MouseTrailComponent } from './mouse-trail/mouse-trail.component';
 
 @Component({
   selector: 'app-root',
@@ -22,6 +23,7 @@ import { FooterComponent } from './footer/footer.component';
     PortfolioComponent,
     ContactComponent,
     FooterComponent,
+    MouseTrailComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',

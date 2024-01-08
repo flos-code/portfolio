@@ -1,1 +1,46 @@
-<p>above-the-fold works!</p>
+<div class="atfContainer">
+  <div class="atfContainerTop">
+    <div class="heading">
+      <h1>Frontend</h1>
+      <h1>Developer</h1>
+    </div>
+
+    <div class="underline">
+      <div>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="632"
+          height="4"
+          viewBox="0 0 632 4"
+          fill="none"
+        >
+          <path
+            d="M630 2H2"
+            stroke="black"
+            stroke-width="3"
+            stroke-linecap="square"
+          />
+        </svg>
+      </div>
+      <span>Florian Scholz</span>
+    </div>
+  </div>
+
+  <div class="atfContainerBottom">
+    <div class="rotatedMail">
+      <span>florianscholz&#64;mail.de</span>
+    </div>
+
+    <div class="scrollArrow">
+      <img
+        [src]="arrowImages[currentImageIndex + 3]"
+        alt="Image {{ currentImageIndex + 1 }}"
+      />
+
+      <span
+        >Scroll <br />
+        Down</span
+      >
+    </div>
+  </div>
+</div>

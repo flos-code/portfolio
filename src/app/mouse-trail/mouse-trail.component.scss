@@ -1,0 +1,63 @@
+.tail {
+  height: 20px;
+  width: 20px;
+  background-color: #00bc8f;
+  border-radius: 20px;
+
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  z-index: 30;
+
+  pointer-events: none;
+  //   opacity: 0;
+  transition: opacity 500ms ease;
+}
+
+.tail2 {
+  height: 20px;
+  width: 20px;
+  background-color: #40cca8;
+  border-radius: 20px;
+
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  z-index: 29;
+
+  pointer-events: none;
+  //   opacity: 0;
+  transition: opacity 500ms ease;
+}
+
+.tail3 {
+  height: 20px;
+  width: 20px;
+  background-color: #80dcc1;
+  border-radius: 20px;
+
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  z-index: 28;
+
+  pointer-events: none;
+  //   opacity: 0;
+  transition: opacity 500ms ease;
+}
+
+.tail4 {
+  height: 20px;
+  width: 20px;
+  background-color: #bfecda;
+  border-radius: 20px;
+
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  z-index: 27;
+
+  pointer-events: none;
+  //   opacity: 0;
+  transition: opacity 500ms ease;
+}
