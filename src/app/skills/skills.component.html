@@ -1,1 +1,11 @@
-<p>skills works!</p>
+<section class="skillsContainer">
+  <h1>My Skills</h1>
+  <div class="skillsImagesBorder">
+    <div class="skillsImages">
+      <div *ngFor="let skill of skills" class="skill">
+        <img [src]="skill.imgPath" [alt]="skill.name" />
+        <span>{{ skill.name }}</span>
+      </div>
+    </div>
+  </div>
+</section>
