@@ -12,4 +12,12 @@ export class PortfolioProjectComponent {
   @Input() project: any; // existing input
   @Input() index: number = 0; // new input for the index
   @Input() totalCount: number = 0; // new input for the total count
+  @Input() isHovered: boolean = false; // New input for hover state
+
+  get hoverStateClass(): string {
+    if (this.isHovered) {
+      return 'hoverState'; // Class when hovered
+    }
+    return 'nonHoverState'; // Class when not hovered
+  }
 }

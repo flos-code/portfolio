@@ -2,12 +2,18 @@
   class="projectContainer"
   [ngClass]="{
     oddProjectContainer: index % 2 === 0,
-    evenProjectContainer: index % 2 !== 0
+    evenProjectContainer: index % 2 !== 0,
+    hoverState: isHovered
   }"
 >
   <div class="projectImg">
-    <img [src]="project.imgPath" alt="{{ project.name }}" />
+    <img
+      class="hoverProjectImg"
+      [src]="project.imgPath"
+      alt="{{ project.name }}"
+    />
     <img class="hoverProject" src="/assets/img/Rectangle 7.png" alt="" />
+    <img class="hoverProjectArrow" src="/assets/img/project_arrow.png" alt="" />
   </div>
 
   <div class="projectInfo">

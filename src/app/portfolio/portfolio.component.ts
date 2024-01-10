@@ -38,4 +38,12 @@ export class PortfolioComponent {
       githubLink: 'https://www.google.com/',
     },
   ];
+  hoveredProjectIndex: number | null = null;
+  onMouseEnter(index: number): void {
+    this.hoveredProjectIndex = index;
+  }
+
+  onMouseLeave(): void {
+    this.hoveredProjectIndex = null;
+  }
 }

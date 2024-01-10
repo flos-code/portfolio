@@ -6,11 +6,17 @@
       code. .
     </span>
   </div>
-  <div class="singleProject" *ngFor="let project of projects; let i = index">
+  <div
+    class="singleProject"
+    *ngFor="let project of projects; let i = index"
+    (mouseenter)="onMouseEnter(i)"
+    (mouseleave)="onMouseLeave()"
+  >
     <app-portfolio-project
       [project]="project"
       [index]="i"
       [totalCount]="projects.length"
+      [isHovered]="hoveredProjectIndex === i"
     >
     </app-portfolio-project>
   </div>

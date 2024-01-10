@@ -5,22 +5,31 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
-
-  &:hover .hoverProject {
-    opacity: 1;
-  }
 }
 
 .projectImg {
   width: 620px;
-  img {
+  position: relative;
+
+  .hoverProjectImg {
     filter: grayscale(1);
+    transition: filter 150ms linear;
   }
 
-  .hoverProject {
-    margin-top: -373px;
+  .hoverProject,
+  .hoverProjectArrow {
+    position: absolute;
+    top: 0;
     opacity: 0;
-    transition: all 150ms ease-in-out;
+    transform: none; // Default state
+    transition: opacity 150ms linear, transform 150ms linear;
+  }
+
+  .hoverProjectArrow {
+    top: 160px;
+    width: 48px;
+    height: 48px;
+    transform: rotate(135deg); // Default state
   }
 }
 
@@ -31,7 +40,6 @@
 
   .projectCounter {
     display: flex;
-
     font-size: 48px;
     font-weight: 700;
     line-height: 120%; /* 57.6px */
@@ -68,11 +76,44 @@
   }
 }
 
+.hoverState .hoverProjectImg {
+  filter: grayscale(0);
+}
+
+.oddProjectContainer.hoverState .hoverProject {
+  opacity: 1;
+  transform: translate(20px, 20px);
+}
+
+.oddProjectContainer.hoverState .hoverProjectArrow {
+  opacity: 1;
+  transform: translate(20px, 20px) rotate(0);
+  width: 75px;
+  height: 75px;
+}
+
+// Hover state classes for even projects
+.evenProjectContainer.hoverState .hoverProject {
+  opacity: 1;
+  transform: translate(-20px, 20px);
+}
+
+.evenProjectContainer.hoverState .hoverProjectArrow {
+  opacity: 1;
+  transform: translate(-20px, 20px) rotate(270deg);
+  width: 75px;
+  height: 75px;
+}
+
 .oddProjectContainer {
   flex-direction: row;
 
   .hoverProject {
-    margin-left: 20px;
+    left: 0;
+  }
+
+  .hoverProjectArrow {
+    left: 580px;
   }
 
   .projectCounter {
@@ -88,7 +129,11 @@
   flex-direction: row-reverse;
 
   .hoverProject {
-    margin-left: -20px;
+    right: 0;
+  }
+
+  .hoverProjectArrow {
+    right: 580px;
   }
 
   .projectCounter {
