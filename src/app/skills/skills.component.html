@@ -1,5 +1,5 @@
 <section class="skillsContainer">
-  <h1>My Skills</h1>
+  <h2>My Skills</h2>
   <div class="skillsImagesBorder">
     <div class="skillsImages">
       <div *ngFor="let skill of skills" class="skill">
@@ -7,5 +7,8 @@
         <span>{{ skill.name }}</span>
       </div>
     </div>
+  </div>
+  <div class="skillsArrow" (mouseenter)="hoveredArrow = true">
+    <img [src]="getImageSrc()" alt="Arrow" />
   </div>
 </section>

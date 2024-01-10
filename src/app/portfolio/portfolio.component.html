@@ -1,2 +1,17 @@
-<app-portfolio-project></app-portfolio-project>
-<app-portfolio-project></app-portfolio-project>
+<section class="portfolioContainer">
+  <div class="portfolioHeading">
+    <h2>Portfolio</h2>
+    <span>
+      Feel free to try out my latest development projects and look into their
+      code. .
+    </span>
+  </div>
+  <div *ngFor="let project of projects; let i = index">
+    <app-portfolio-project
+      [project]="project"
+      [index]="i"
+      [totalCount]="projects.length"
+    >
+    </app-portfolio-project>
+  </div>
+</section>

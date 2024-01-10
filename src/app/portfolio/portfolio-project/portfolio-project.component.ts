@@ -1,12 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-portfolio-project',
   standalone: true,
   imports: [],
   templateUrl: './portfolio-project.component.html',
-  styleUrl: './portfolio-project.component.scss'
+  styleUrl: './portfolio-project.component.scss',
 })
 export class PortfolioProjectComponent {
-
+  @Input() project: any; // existing input
+  @Input() index: number = 0; // new input for the index
+  @Input() totalCount: number = 0; // new input for the total count
 }

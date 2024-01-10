@@ -202,6 +202,20 @@ body {
   font-family: "Overpass";
 }
 
+h2 {
+  font-family: "Syne";
+  font-size: 78px;
+  font-weight: 800;
+  letter-spacing: 0.78px;
+  transition: all 150ms ease-in-out;
+  margin-block: unset;
+  margin-bottom: 48px;
+
+  &:hover {
+    color: $accentColor;
+  }
+}
+
 .mainButton {
   display: inline-flex;
   padding: 20px 60px;

@@ -1,1 +1,11 @@
-<p>portfolio-project works!</p>
+<div class="projectContainer">
+  <img [src]="project.imgPath" alt="{{ project.name }}" />
+
+  <div>{{ index + 1 }}/{{ totalCount }}</div>
+  <div>{{ index % 2 === 0 ? "Even" : "Odd" }}</div>
+  <h2>{{ project.name }}</h2>
+  <span>{{ project.usedTools.join(" | ") }}</span>
+  <span>{{ project.description }}</span>
+  <a href="{{ project.liveLink }}"><button>Live</button></a>
+  <a href="{{ project.githubLink }}"><button>GitHub</button></a>
+</div>

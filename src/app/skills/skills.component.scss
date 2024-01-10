@@ -7,21 +7,11 @@
   align-items: center;
 }
 
-h1 {
+h2 {
   padding: 0px 12px;
-  font-family: "Syne";
-  font-size: 78px;
-  font-weight: 800;
-  letter-spacing: 0.78px;
-  transition: all 150ms ease-in-out;
-  margin-block: unset;
   margin-bottom: -49px;
   background-color: $secondaryColor;
   z-index: 1;
-
-  &:hover {
-    color: $accentColor;
-  }
 }
 
 .skillsImagesBorder {
@@ -99,5 +89,17 @@ h1 {
     100% {
       transform: translateX(0px);
     }
+  }
+}
+
+.skillsArrow {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  cursor: pointer;
+  img {
+    transform: scaleX(-1);
+    margin-top: 48px;
+    margin-left: 120px;
   }
 }
