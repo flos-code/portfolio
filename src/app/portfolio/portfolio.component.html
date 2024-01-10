@@ -6,7 +6,7 @@
       code. .
     </span>
   </div>
-  <div *ngFor="let project of projects; let i = index">
+  <div class="singleProject" *ngFor="let project of projects; let i = index">
     <app-portfolio-project
       [project]="project"
       [index]="i"

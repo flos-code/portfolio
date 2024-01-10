@@ -1,11 +1,31 @@
-<div class="projectContainer">
-  <img [src]="project.imgPath" alt="{{ project.name }}" />
+<div
+  class="projectContainer"
+  [ngClass]="{
+    oddProjectContainer: index % 2 === 0,
+    evenProjectContainer: index % 2 !== 0
+  }"
+>
+  <div class="projectImg">
+    <img [src]="project.imgPath" alt="{{ project.name }}" />
+    <img class="hoverProject" src="/assets/img/Rectangle 7.png" alt="" />
+  </div>
 
-  <div>{{ index + 1 }}/{{ totalCount }}</div>
-  <div>{{ index % 2 === 0 ? "Even" : "Odd" }}</div>
-  <h2>{{ project.name }}</h2>
-  <span>{{ project.usedTools.join(" | ") }}</span>
-  <span>{{ project.description }}</span>
-  <a href="{{ project.liveLink }}"><button>Live</button></a>
-  <a href="{{ project.githubLink }}"><button>GitHub</button></a>
+  <div class="projectInfo">
+    <div class="projectCounter">
+      <div>{{ index + 1 }}/{{ totalCount }}</div>
+    </div>
+    <div class="projectText">
+      <h3>{{ project.name }}</h3>
+      <span class="usedTools">{{ project.usedTools.join(" | ") }}</span>
+      <span class="description">{{ project.description }}</span>
+      <div class="projectLinks">
+        <a href="{{ project.liveLink }}"
+          ><button class="mainButton">Live</button></a
+        >
+        <a href="{{ project.githubLink }}"
+          ><button class="mainButton">GitHub</button></a
+        >
+      </div>
+    </div>
+  </div>
 </div>

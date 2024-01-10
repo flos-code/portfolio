@@ -1,0 +1,101 @@
+@import "../../../styles.scss";
+
+.projectContainer {
+  background-color: aqua;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+
+  &:hover .hoverProject {
+    opacity: 1;
+  }
+}
+
+.projectImg {
+  width: 620px;
+  img {
+    filter: grayscale(1);
+  }
+
+  .hoverProject {
+    margin-top: -373px;
+    opacity: 0;
+    transition: all 150ms ease-in-out;
+  }
+}
+
+.projectInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+
+  .projectCounter {
+    display: flex;
+
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 120%; /* 57.6px */
+  }
+}
+
+.projectText {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 475px;
+
+  h3 {
+    font-family: "Syne";
+    font-size: 45px;
+    font-weight: 800;
+    margin-block: unset;
+  }
+
+  .usedTools {
+    color: $accentColor;
+    font-size: 23px;
+    line-height: 120%; /* 27.6px */
+  }
+
+  .description {
+    font-size: 16px;
+    line-height: 120%; /* 19.2px */
+  }
+
+  .projectLinks {
+    display: flex;
+    gap: 32px;
+  }
+}
+
+.oddProjectContainer {
+  flex-direction: row;
+
+  .hoverProject {
+    margin-left: 20px;
+  }
+
+  .projectCounter {
+    justify-content: flex-end;
+  }
+
+  .projectText {
+    margin-right: 32px;
+  }
+}
+
+.evenProjectContainer {
+  flex-direction: row-reverse;
+
+  .hoverProject {
+    margin-left: -20px;
+  }
+
+  .projectCounter {
+    justify-content: flex-start;
+  }
+
+  .projectText {
+    margin-left: 32px;
+  }
+}

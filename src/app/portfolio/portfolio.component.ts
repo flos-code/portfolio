@@ -22,7 +22,7 @@ export class PortfolioComponent {
     },
     {
       name: 'Sharkie',
-      imgPath: '/assets/icons/html.svg',
+      imgPath: '/assets/img/portfolio photos s3.png',
       usedTools: ['HTML', 'CSS', 'JS'],
       description:
         'A simple Jump-and-Run game based on an object-oriented approach. Help sharkie to find coins and poison bottles to fight against the killer whale.',
@@ -31,7 +31,7 @@ export class PortfolioComponent {
     },
     {
       name: 'DaBubble',
-      imgPath: '/assets/icons/html.svg',
+      imgPath: '/assets/img/portfolio photos s3.png',
       usedTools: ['HTML', 'CSS', 'JS'],
       description: 'testtd',
       liveLink: 'https://www.google.com/',
