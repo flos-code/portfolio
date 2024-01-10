@@ -33,28 +33,24 @@ export class MouseTrailComponent implements OnInit, OnDestroy {
       .pipe(delay(100)) // Delay for 1 second (1000 milliseconds)
       .subscribe((e: any) => {
         this.coordinates = { x: e.clientX, y: e.clientY };
-        console.log('coordinates: ', this.coordinates);
       });
 
     this.subscription2 = fromEvent(document, 'mousemove')
       .pipe(delay(150))
       .subscribe((e: any) => {
         this.coordinates2 = { x: e.clientX, y: e.clientY };
-        console.log('coordinates2: ', this.coordinates2);
       });
 
     this.subscription3 = fromEvent(document, 'mousemove')
       .pipe(delay(250))
       .subscribe((e: any) => {
         this.coordinates3 = { x: e.clientX, y: e.clientY };
-        console.log('coordinates2: ', this.coordinates3);
       });
 
     this.subscription4 = fromEvent(document, 'mousemove')
       .pipe(delay(350))
       .subscribe((e: any) => {
         this.coordinates4 = { x: e.clientX, y: e.clientY };
-        console.log('coordinates2: ', this.coordinates4);
       });
   }
 

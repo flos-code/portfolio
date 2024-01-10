@@ -1,1 +1,22 @@
-<p>about works!</p>
+<section class="aboutContainer">
+  <div class="aboutText">
+    <h1>About me</h1>
+    <p>
+      I am a Front-end developer based in Munich, Germany. I enjoy helping
+      designers and companies bring their ideas into real life. I am looking
+      forward to continuing my developer career with a job in a junior web
+      developer position.
+      <br /><br />
+      If you think I'd be a good match for your projects, contact me!
+    </p>
+    <button class="mainButton">Let's talk</button>
+  </div>
+  <div class="aboutImg">
+    <img
+      [src]="imgSrcProfile"
+      (mouseover)="imgSrcProfile = '/assets/img/Property 1=Variant4.png'"
+      (mouseout)="imgSrcProfile = '/assets/img/Property 1=Default.png'"
+    />
+    <img src="" alt="arrow to next section" />
+  </div>
+</section>

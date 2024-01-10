@@ -47,10 +47,12 @@
   .rotatedMail {
     transform: rotate(-90deg);
 
-    span {
+    a {
       font-size: 23px;
       font-weight: 300;
       letter-spacing: -0.575px;
+      text-decoration: none;
+      color: black;
     }
   }
 
