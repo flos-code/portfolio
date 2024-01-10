@@ -2,7 +2,12 @@
 
 .aboutContainer {
   display: flex;
+  flex-direction: column;
   padding: 0 100px;
+}
+
+.aboutContainerTop {
+  display: flex;
   justify-content: space-between;
 }
 
@@ -35,13 +40,34 @@
   }
 
   button {
+    margin-top: 88px;
   }
 }
 .aboutImg {
-  display: flex;
-  flex-direction: column;
-  img {
+  .profileImage {
+    position: relative;
     width: 553px;
-    height: 553px;
+
+    &:hover .hoverProfileImage {
+      opacity: 1;
+    }
+    img {
+      position: absolute;
+      width: 553px;
+      height: 553px;
+    }
+    .hoverProfileImage {
+      top: 20px;
+      left: 20px;
+      opacity: 0;
+      transition: all 150ms;
+    }
+  }
+}
+
+.aboutContainerBottom {
+  img {
+    padding-left: 55vw;
+    padding-top: 32px;
   }
 }
