@@ -1,6 +1,13 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import {
+  Component,
+  OnDestroy,
+  OnInit,
+  Inject,
+  PLATFORM_ID,
+} from '@angular/core';
 import { fromEvent, Subscription, delay } from 'rxjs';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-mouse-trail',
@@ -19,7 +26,7 @@ export class MouseTrailComponent implements OnInit, OnDestroy {
   subscription3: Subscription = new Subscription();
   subscription4: Subscription = new Subscription();
 
-  constructor() {}
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
 
   // ngOnInit() {
   //   this.subscription = fromEvent(document, 'mousemove').subscribe((e: any) => {
@@ -29,29 +36,31 @@ export class MouseTrailComponent implements OnInit, OnDestroy {
   // }
 
   ngOnInit() {
-    this.subscription = fromEvent(document, 'mousemove')
-      .pipe(delay(100)) // Delay for 1 second (1000 milliseconds)
-      .subscribe((e: any) => {
-        this.coordinates = { x: e.clientX, y: e.clientY };
-      });
+    if (isPlatformBrowser(this.platformId)) {
+      this.subscription = fromEvent(document, 'mousemove')
+        .pipe(delay(100)) // Delay for 1 second (1000 milliseconds)
+        .subscribe((e: any) => {
+          this.coordinates = { x: e.clientX, y: e.clientY };
+        });
 
-    this.subscription2 = fromEvent(document, 'mousemove')
-      .pipe(delay(150))
-      .subscribe((e: any) => {
-        this.coordinates2 = { x: e.clientX, y: e.clientY };
-      });
+      this.subscription2 = fromEvent(document, 'mousemove')
+        .pipe(delay(150))
+        .subscribe((e: any) => {
+          this.coordinates2 = { x: e.clientX, y: e.clientY };
+        });
 
-    this.subscription3 = fromEvent(document, 'mousemove')
-      .pipe(delay(250))
-      .subscribe((e: any) => {
-        this.coordinates3 = { x: e.clientX, y: e.clientY };
-      });
+      this.subscription3 = fromEvent(document, 'mousemove')
+        .pipe(delay(250))
+        .subscribe((e: any) => {
+          this.coordinates3 = { x: e.clientX, y: e.clientY };
+        });
 
-    this.subscription4 = fromEvent(document, 'mousemove')
-      .pipe(delay(350))
-      .subscribe((e: any) => {
-        this.coordinates4 = { x: e.clientX, y: e.clientY };
-      });
+      this.subscription4 = fromEvent(document, 'mousemove')
+        .pipe(delay(350))
+        .subscribe((e: any) => {
+          this.coordinates4 = { x: e.clientX, y: e.clientY };
+        });
+    }
   }
 
   ngOnDestroy() {

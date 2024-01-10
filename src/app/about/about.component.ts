@@ -1,15 +1,17 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-about',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './about.component.html',
   styleUrl: './about.component.scss',
 })
 export class AboutComponent {
   hoveredArrow: boolean = false;
   hoveredArrowDelay: boolean = false;
+  hoveredProfileImage: boolean = false;
 
   arrowImagesLeft: string[] = [
     '/assets/img/arrow_left_00.png',
@@ -28,5 +30,13 @@ export class AboutComponent {
     } else {
       return this.arrowImagesLeft[0];
     }
+  }
+
+  onMouseEnterProfile(): void {
+    this.hoveredProfileImage = true;
+  }
+
+  onMouseLeaveProfile(): void {
+    this.hoveredProfileImage = false;
   }
 }
