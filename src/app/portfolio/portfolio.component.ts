@@ -22,7 +22,7 @@ export class PortfolioComponent {
   projects = [
     {
       name: 'Join',
-      imgPath: '/assets/img/portfolio photos s3.png',
+      imgPath: '/assets/img/project_join.jpg',
       usedTools: ['HTML', 'CSS', 'JS'],
       description:
         'Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories. ',
@@ -31,7 +31,7 @@ export class PortfolioComponent {
     },
     {
       name: 'Sharkie',
-      imgPath: '/assets/img/portfolio photos s3.png',
+      imgPath: '/assets/img/project_sharkie.jpg',
       usedTools: ['HTML', 'CSS', 'JS'],
       description:
         'A simple Jump-and-Run game based on an object-oriented approach. Help sharkie to find coins and poison bottles to fight against the killer whale.',
