@@ -27,7 +27,7 @@ export class PortfolioComponent {
       description:
         'Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories. ',
       liveLink: 'https://www.google.com/',
-      githubLink: 'https://www.google.com/',
+      githubLink: 'https://github.com/flos-code/Join',
     },
     {
       name: 'Sharkie',
@@ -36,7 +36,7 @@ export class PortfolioComponent {
       description:
         'A simple Jump-and-Run game based on an object-oriented approach. Help sharkie to find coins and poison bottles to fight against the killer whale.',
       liveLink: 'https://www.google.com/',
-      githubLink: 'https://www.google.com/',
+      githubLink: 'https://github.com/flos-code/Sharkie',
     },
     {
       name: 'DaBubble',
