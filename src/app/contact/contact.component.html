@@ -7,16 +7,22 @@
       them to life!</span
     >
   </div>
-  <div class="contactForm">
+  <form
+    class="contactForm"
+    #contactForm="ngForm"
+    (ngSubmit)="onSubmit(contactForm)"
+  >
     <mat-form-field appearance="outline" [class.has-content]="inputName.value">
       <mat-label>Your name</mat-label>
       <input matInput #inputName />
+      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
       <mat-hint>Your name is required</mat-hint>
     </mat-form-field>
 
     <mat-form-field appearance="outline" [class.has-content]="inputEmail.value">
       <mat-label>Your email</mat-label>
       <input matInput #inputEmail />
+      <mat-icon matSuffix>error</mat-icon>
       <mat-hint>Your email is required</mat-hint>
     </mat-form-field>
 
@@ -26,11 +32,13 @@
     >
       <mat-label>Your message</mat-label>
       <textarea matInput #inputMessage></textarea>
+      <mat-icon matSuffix>check_circle</mat-icon>
       <mat-hint>Your message is empty</mat-hint>
     </mat-form-field>
     <mat-checkbox class="example-margin"
       >I've read the <span>privacy policy</span> and agree to the processing of
       my data as outlined.</mat-checkbox
     >
-  </div>
+    <button class="mainButton">Send message</button>
+  </form>
 </section>
