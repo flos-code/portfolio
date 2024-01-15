@@ -1,3 +1,90 @@
-.test {
-  height: 3000px;
+@import "../../styles.scss";
+
+footer {
+  padding: 0 100px 32px 100px;
+
+  display: flex;
+  flex-direction: column;
+  background-color: $primaryColor;
+}
+
+.footerContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+
+  .footerLeft {
+    display: flex;
+    flex-direction: column;
+
+    span {
+      color: $secondaryColor;
+      font-size: 23px;
+      line-height: 120%; /* 27.6px */
+      margin-top: 16px;
+    }
+  }
+
+  .footerRight {
+    display: flex;
+    gap: 42px;
+
+    a {
+      display: flex;
+      width: 40px;
+      height: 40px;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 10px;
+      transition: all 5000ms ease-in-out;
+
+      &:hover img {
+        margin-bottom: 10px;
+      }
+    }
+
+    img {
+      width: 30px;
+      transition: all 150ms ease-in-out;
+    }
+  }
+}
+
+.legalNotice {
+  display: flex;
+  justify-content: flex-end;
+
+  a {
+    display: inline-flex;
+    padding: 5px 10px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3px;
+    text-decoration: none;
+
+    span {
+      color: $secondaryColor;
+      font-size: 16px;
+      line-height: 120%;
+    }
+
+    div {
+      width: 56px;
+      height: 0;
+      transition: all 150ms ease-in-out;
+    }
+
+    &:hover span {
+      font-weight: 700;
+    }
+
+    &:hover div {
+      background-color: $accentColor;
+      height: 2px;
+      border-radius: 1px;
+      margin-left: 36px;
+    }
+  }
 }

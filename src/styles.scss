@@ -202,6 +202,11 @@ body {
   font-family: "Overpass";
 }
 
+section {
+  display: flex;
+  padding: 0 100px;
+}
+
 h2 {
   font-family: "Syne";
   font-size: 78px;
