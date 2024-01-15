@@ -217,7 +217,7 @@ h2 {
   margin-bottom: 48px;
 
   &:hover {
-    color: $accentColor;
+    color: $accentColor !important;
   }
 }
 
@@ -247,5 +247,50 @@ h2 {
       padding: 20px 80px;
       box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.15);
     }
+  }
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+::ng-deep .contactContainer .mat-mdc-form-field {
+  .mdc-notched-outline {
+    border: none !important; /* Remove the default outline border */
+  }
+
+  .mdc-notched-outline__leading,
+  .mdc-notched-outline__notch,
+  .mdc-notched-outline__trailing {
+    border: none !important; /* Remove the border from all parts of the outline */
+  }
+}
+
+.mat-mdc-form-field {
+  .mdc-text-field {
+    border: none !important; /* Remove the default border */
+    border-bottom: 2px solid $secondaryColor !important; /* Add the bottom border */
+  }
+
+  &:hover .mdc-text-field {
+    border: 4px solid $secondaryColor !important; /* Border style on hover */
+    border-radius: 4px;
+  }
+
+  &.mat-focused .mdc-text-field {
+    border: 2px solid $secondaryColor !important; /* Border style when focused */
+    border-radius: 4px;
+  }
+}
+
+.mat-mdc-form-field.has-content {
+  .mdc-text-field {
+    border: 1px solid $secondaryColor !important; /* Border style when the input has content */
+    border-radius: 4px;
   }
 }

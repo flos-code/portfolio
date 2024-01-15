@@ -1,0 +1,66 @@
+@import "../../styles.scss";
+
+.contactContainer {
+  background-color: lightgray;
+
+  //   background-color: $primaryColor;
+  clip-path: polygon(0% 0%, 100% 10%, 100% 100%, 0% 100%);
+  display: flex;
+  flex-direction: column;
+
+  h2 {
+    color: $secondaryColor;
+  }
+}
+
+.contactFormHeading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h3 {
+    color: $accentColor;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 120%;
+    margin-block: unset;
+    margin-bottom: 16px;
+  }
+
+  span {
+    color: $secondaryColor;
+    font-size: 23px;
+    line-height: 120%;
+  }
+}
+
+.contactForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  margin-top: 32px;
+
+  mat-label {
+    color: $secondaryColor;
+    font-family: "Overpass";
+    font-size: 16px;
+    line-height: 120%; /* 19.2px */
+    background-color: lightgrey;
+    padding: 0 4px;
+  }
+
+  input {
+    color: $secondaryColor;
+    font-family: "Overpass";
+    font-size: 16px;
+    line-height: 120%; /* 19.2px */
+  }
+
+  textarea {
+    color: $secondaryColor;
+    font-family: "Overpass";
+    font-size: 16px;
+    line-height: 120%; /* 19.2px */
+  }
+}
