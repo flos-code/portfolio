@@ -234,13 +234,13 @@ h2 {
   line-height: 120%; /* 27.6px */
   transition: all 150ms;
 
-  &:hover {
+  &:hover:enabled {
     cursor: pointer;
     padding: 20px 80px;
     box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.15);
     font-weight: 700;
 
-    &:active {
+    &:active:enabled {
       background-color: $primaryColor;
       font-weight: 400;
       color: $secondaryColor;
@@ -253,6 +253,7 @@ h2 {
 html,
 body {
   height: 100%;
+  scroll-behavior: smooth;
 }
 body {
   margin: 0;
@@ -295,6 +296,43 @@ body {
   }
 }
 
+.mat-mdc-form-field .mdc-text-field {
+  box-sizing: border-box; /* Include border and padding in total width and height */
+}
+
 .mat-mdc-form-field-required-marker {
   display: none;
+}
+
+.mdc-checkbox {
+  &__native-control:enabled ~ &__background {
+    border-color: $secondaryColor !important;
+  }
+}
+
+.mdc-checkbox {
+  &__native-control:enabled:checked ~ &__background {
+    background-color: $accentColor !important;
+    border-color: $accentColor !important;
+  }
+}
+
+.mdc-checkbox {
+  &__native-control:focus:checked ~ &__ripple {
+    opacity: 0.3 !important;
+    background-color: $accentColor !important;
+  }
+}
+
+.mdc-checkbox {
+  &__native-control:hover ~ &__ripple {
+    opacity: 0.3 !important;
+    background-color: $accentColor !important;
+  }
+}
+
+.mdc-label {
+  color: $secondaryColor;
+  font-size: 14px;
+  line-height: 120%; /* 16.8px */
 }

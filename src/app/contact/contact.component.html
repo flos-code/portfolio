@@ -79,15 +79,21 @@
     </mat-form-field>
 
     <mat-checkbox
-      class="example-margin"
       [(ngModel)]="privacyPolicyChecked"
       name="privacyPolicy"
       required
     >
-      I've read the <span>privacy policy</span> and agree to the processing of
-      my data as outlined.
+      I've read the
+      <a [class.privacyPolicyLink]="privacyPolicyChecked" href=""
+        >privacy policy</a
+      >
+      and agree to the processing of my data as outlined.
     </mat-checkbox>
-    <button type="submit" class="mainButton" [disabled]="!privacyPolicyChecked">
+    <button
+      type="submit"
+      class="mainButton contactButton"
+      [disabled]="!privacyPolicyChecked"
+    >
       Send message
     </button>
   </form>
