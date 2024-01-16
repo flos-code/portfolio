@@ -50,6 +50,13 @@
     padding: 0 4px;
   }
 
+  mat-hint {
+    color: #e61c40;
+    font-family: "Overpass";
+    font-size: 16px;
+    line-height: 120%; /* 19.2px */
+  }
+
   input {
     color: $secondaryColor;
     font-family: "Overpass";
