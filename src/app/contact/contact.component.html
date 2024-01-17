@@ -7,69 +7,69 @@
       them to life!</span
     >
   </div>
-  <form
-    class="contactForm"
-    #contactForm="ngForm"
-    (ngSubmit)="onSubmit(contactForm)"
-  >
-    <mat-form-field appearance="outline" [class.has-content]="inputName">
+  <form class="contactForm" #contactForm (submit)="sendMail()">
+    <mat-form-field appearance="outline" [class.has-content]="nameField.value">
       <mat-label>Your name</mat-label>
-      <input matInput [(ngModel)]="inputName" name="name" required />
-      <mat-hint *ngIf="inputName && !isNameValid(inputName)"
+      <input matInput name="name" #nameField required />
+      <mat-hint *ngIf="nameField.value && !isNameValid(nameField.value)"
         >Please enter a valid name</mat-hint
       >
       <mat-icon
         [ngStyle]="{ color: '#70E61C' }"
         matSuffix
-        *ngIf="inputName && inputName.trim() !== '' && isNameValid(inputName)"
+        *ngIf="
+          nameField.value &&
+          nameField.value.trim() !== '' &&
+          isNameValid(nameField.value)
+        "
         >check_circle</mat-icon
       >
       <mat-icon
         [ngStyle]="{ color: '#e61c40' }"
         matSuffix
-        *ngIf="inputName && !isNameValid(inputName)"
+        *ngIf="nameField.value && !isNameValid(nameField.value)"
         >error</mat-icon
       >
     </mat-form-field>
 
-    <mat-form-field appearance="outline" [class.has-content]="inputEmail">
+    <mat-form-field appearance="outline" [class.has-content]="emailField.value">
       <mat-label>Your email</mat-label>
-      <input matInput [(ngModel)]="inputEmail" name="email" required />
+      <input matInput name="email" #emailField required />
 
-      <mat-hint *ngIf="inputEmail && !isEmailValid(inputEmail)"
+      <mat-hint *ngIf="emailField.value && !isEmailValid(emailField.value)"
         >Please enter a valid email</mat-hint
       >
       <mat-icon
         [ngStyle]="{ color: '#70E61C' }"
         matSuffix
-        *ngIf="inputEmail && isEmailValid(inputEmail)"
+        *ngIf="emailField.value && isEmailValid(emailField.value)"
         >check_circle</mat-icon
       >
       <mat-icon
         [ngStyle]="{ color: '#e61c40' }"
         matSuffix
-        *ngIf="inputEmail && !isEmailValid(inputEmail)"
+        *ngIf="emailField.value && !isEmailValid(emailField.value)"
         >error</mat-icon
       >
     </mat-form-field>
 
     <mat-form-field
       appearance="outline"
-      [class.has-content]="inputMessage.value"
+      [class.has-content]="messageField.value"
     >
       <mat-label>Your message</mat-label>
       <textarea
         type="text"
         matInput
         ngModel
-        #inputMessage="ngModel"
+        #messageField
         name="message"
         required
       ></textarea>
       <mat-icon
         [ngStyle]="{ color: '#70E61C' }"
         matSuffix
-        *ngIf="inputMessage.value && inputMessage.valid"
+        *ngIf="messageField.value"
         >check_circle</mat-icon
       >
 
@@ -90,6 +90,7 @@
       and agree to the processing of my data as outlined.
     </mat-checkbox>
     <button
+      #sendButton
       type="submit"
       class="mainButton contactButton"
       [disabled]="!privacyPolicyChecked"

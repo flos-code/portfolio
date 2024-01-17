@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NgForm } from '@angular/forms';
+import { NgForm, ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
@@ -14,6 +14,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
   imports: [
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
@@ -24,6 +25,12 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
   styleUrl: './contact.component.scss',
 })
 export class ContactComponent {
+  @ViewChild('contactForm') contactForm!: ElementRef;
+  @ViewChild('nameField') nameField!: ElementRef;
+  @ViewChild('emailField') emailField!: ElementRef;
+  @ViewChild('messageField') messageField!: ElementRef;
+  @ViewChild('sendButton') sendButton!: ElementRef;
+
   inputName: string = '';
   inputEmail: string = '';
   inputMessage: string = '';
@@ -40,11 +47,30 @@ export class ContactComponent {
     return regex.test(email);
   }
 
-  onSubmit(form: NgForm) {
-    if (form.valid) {
-      // Process your form
-    } else {
-      // Handle invalid form
-    }
+  async sendMail() {
+    console.log('Sending mail', this.contactForm);
+    let nameField = this.nameField.nativeElement;
+    let emailField = this.emailField.nativeElement;
+    let messageField = this.messageField.nativeElement;
+    let sendButton = this.sendButton.nativeElement;
+
+    nameField.disabled = true;
+    emailField.disabled = true;
+    messageField.disabled = true;
+    sendButton.disabled = true;
+    //sendeanimation
+    let fd = new FormData();
+    fd.append('name', nameField.value);
+    fd.append('email', emailField.value);
+    fd.append('message', messageField.value);
+    await fetch('https://scholz-florian.com/send_mail/send_mail.php', {
+      method: 'POST',
+      body: fd,
+    });
+    //text anzegien nachtricht gesendet
+    nameField.disabled = false;
+    emailField.disabled = false;
+    messageField.disabled = false;
+    sendButton.disabled = false;
   }
 }
