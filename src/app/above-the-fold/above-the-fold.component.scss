@@ -58,12 +58,21 @@
   .scrollArrow {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 6px;
 
-    img {
+    .scrollArrowAnimation {
       padding: 10px;
       width: 96px;
       height: 160px;
+
+      display: flex;
+      overflow: hidden;
+      img {
+        width: 96px;
+        height: 160px;
+        animation: arrowAnimation 1500ms linear infinite;
+      }
     }
 
     span {
@@ -72,5 +81,14 @@
       font-weight: 300;
       letter-spacing: -0.575px;
     }
+  }
+}
+
+@keyframes arrowAnimation {
+  0% {
+    margin-top: -170px;
+  }
+  100% {
+    margin-top: 110px; /* Reset to start */
   }
 }

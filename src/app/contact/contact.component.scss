@@ -122,3 +122,24 @@
     }
   }
 }
+
+.arrowUp {
+  align-self: flex-end;
+  width: 56px;
+  height: 80px;
+  margin-top: -64px;
+  overflow: hidden;
+  margin-bottom: 32px;
+  cursor: pointer;
+
+  &:hover img {
+    margin-top: 0;
+  }
+
+  img {
+    margin-top: 24px;
+    width: 56px;
+    height: 80px;
+    transition: all 250ms ease-in-out;
+  }
+}
