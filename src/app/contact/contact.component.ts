@@ -48,7 +48,6 @@ export class ContactComponent {
   }
 
   async sendMail() {
-    console.log('Sending mail', this.contactForm);
     let nameField = this.nameField.nativeElement;
     let emailField = this.emailField.nativeElement;
     let messageField = this.messageField.nativeElement;
@@ -72,5 +71,10 @@ export class ContactComponent {
     emailField.disabled = false;
     messageField.disabled = false;
     sendButton.disabled = false;
+
+    nameField.value = '';
+    emailField.value = '';
+    messageField.value = '';
+    this.privacyPolicyChecked = false;
   }
 }

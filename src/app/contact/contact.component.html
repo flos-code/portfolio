@@ -9,10 +9,20 @@
   </div>
   <form class="contactForm" #contactForm (submit)="sendMail()">
     <mat-form-field appearance="outline" [class.has-content]="nameField.value">
-      <mat-label>Your name</mat-label>
-      <input matInput name="name" #nameField required />
+      <mat-label>Your name*</mat-label>
+      <input
+        matInput
+        name="name"
+        #nameField
+        [(ngModel)]="inputName"
+        #nameFieldModel="ngModel"
+        required
+      />
       <mat-hint *ngIf="nameField.value && !isNameValid(nameField.value)"
         >Please enter a valid name</mat-hint
+      >
+      <mat-hint *ngIf="nameFieldModel.touched && !inputName"
+        >Your name is required</mat-hint
       >
       <mat-icon
         [ngStyle]="{ color: '#70E61C' }"
@@ -27,17 +37,30 @@
       <mat-icon
         [ngStyle]="{ color: '#e61c40' }"
         matSuffix
-        *ngIf="nameField.value && !isNameValid(nameField.value)"
+        *ngIf="
+          (nameField.value && !isNameValid(nameField.value)) ||
+          (nameFieldModel.touched && !inputName)
+        "
         >error</mat-icon
       >
     </mat-form-field>
 
     <mat-form-field appearance="outline" [class.has-content]="emailField.value">
-      <mat-label>Your email</mat-label>
-      <input matInput name="email" #emailField required />
+      <mat-label>Your email*</mat-label>
+      <input
+        matInput
+        name="email"
+        #emailField
+        [(ngModel)]="inputEmail"
+        #emailFieldModel="ngModel"
+        required
+      />
 
       <mat-hint *ngIf="emailField.value && !isEmailValid(emailField.value)"
         >Please enter a valid email</mat-hint
+      >
+      <mat-hint *ngIf="emailFieldModel.touched && !inputEmail"
+        >Your email is required</mat-hint
       >
       <mat-icon
         [ngStyle]="{ color: '#70E61C' }"
@@ -48,7 +71,10 @@
       <mat-icon
         [ngStyle]="{ color: '#e61c40' }"
         matSuffix
-        *ngIf="emailField.value && !isEmailValid(emailField.value)"
+        *ngIf="
+          (emailField.value && !isEmailValid(emailField.value)) ||
+          (emailFieldModel.touched && !inputEmail)
+        "
         >error</mat-icon
       >
     </mat-form-field>
@@ -57,25 +83,32 @@
       appearance="outline"
       [class.has-content]="messageField.value"
     >
-      <mat-label>Your message</mat-label>
+      <mat-label>Your message*</mat-label>
       <textarea
         type="text"
         matInput
         ngModel
         #messageField
+        [(ngModel)]="inputMessage"
+        #messageFieldModel="ngModel"
         name="message"
         required
       ></textarea>
+      <mat-hint *ngIf="messageFieldModel.touched && !inputMessage"
+        >A message is required</mat-hint
+      >
       <mat-icon
         [ngStyle]="{ color: '#70E61C' }"
         matSuffix
         *ngIf="messageField.value"
         >check_circle</mat-icon
       >
-
-      <!-- <mat-hint *ngIf="!inputMessage.valid && inputMessage.touched"
-        >Your message is empty</mat-hint
-      > -->
+      <mat-icon
+        [ngStyle]="{ color: '#e61c40' }"
+        matSuffix
+        *ngIf="messageFieldModel.touched && !inputMessage"
+        >error</mat-icon
+      >
     </mat-form-field>
 
     <mat-checkbox
@@ -93,7 +126,14 @@
       #sendButton
       type="submit"
       class="mainButton contactButton"
-      [disabled]="!privacyPolicyChecked"
+      [disabled]="
+        !privacyPolicyChecked ||
+        !inputName ||
+        !inputEmail ||
+        !inputMessage ||
+        !isNameValid(inputName) ||
+        !isEmailValid(inputEmail)
+      "
     >
       Send message
     </button>
