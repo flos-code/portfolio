@@ -4,13 +4,28 @@
   // background-color: lightgray;
 
   background-color: $primaryColor;
-  clip-path: polygon(0% 0%, 100% 10%, 100% 100%, 0% 100%);
+  // clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 100%);
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 200px; // Adjust the height as needed
+    background-color: $primaryColor;
+    transform: skewY(4deg); // Adjust the angle as needed
+    transform-origin: top right;
+    z-index: -1;
+  }
 
   h2 {
     color: $secondaryColor;
+    align-self: flex-start;
   }
 }
 
@@ -48,7 +63,6 @@
 
   mat-form-field {
     width: 100%;
-
     margin-bottom: 16px;
   }
 
@@ -66,6 +80,15 @@
     font-family: "Overpass";
     font-size: 16px;
     line-height: 120%; /* 19.2px */
+  }
+
+  .contactInput {
+    height: 64px;
+  }
+
+  .contactTextarea {
+    height: 180px;
+    margin-bottom: 32px;
   }
 
   input {

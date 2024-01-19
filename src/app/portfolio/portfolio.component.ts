@@ -38,14 +38,14 @@ export class PortfolioComponent {
       liveLink: 'https://www.google.com/',
       githubLink: 'https://github.com/flos-code/Sharkie',
     },
-    {
-      name: 'DaBubble',
-      imgPath: '/assets/img/portfolio photos s3.png',
-      usedTools: ['HTML', 'CSS', 'JS'],
-      description: 'testtd',
-      liveLink: 'https://www.google.com/',
-      githubLink: 'https://www.google.com/',
-    },
+    // {
+    //   name: 'DaBubble',
+    //   imgPath: '/assets/img/portfolio photos s3.png',
+    //   usedTools: ['HTML', 'CSS', 'JS'],
+    //   description: 'testtd',
+    //   liveLink: 'https://www.google.com/',
+    //   githubLink: 'https://www.google.com/',
+    // },
   ];
   hoveredProjectIndex: number | null = null;
   onMouseEnter(index: number): void {
