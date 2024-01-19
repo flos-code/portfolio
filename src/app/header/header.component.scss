@@ -11,5 +11,188 @@ header {
   align-items: center;
   padding: 30px 100px;
   background-color: $secondaryColor;
-  z-index: 1;
+  z-index: 3;
+
+  .openMenu {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.menu {
+  position: absolute;
+  top: 98px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: $secondaryColor;
+  z-index: 3;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 300ms ease-in-out, visibility 300ms ease-in-out;
+
+  &.visible {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 300ms ease-in-out;
+  }
+}
+
+.menuLinks {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  margin-top: 32px;
+
+  a {
+    color: $primaryColor;
+    text-align: center;
+    font-family: "Syne";
+    font-size: 96px;
+    font-weight: 700;
+    letter-spacing: -2.4px;
+    text-decoration: none;
+    width: 640px;
+    height: 120px;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      border-left: 4px solid $primaryColor;
+      border-bottom: 4px solid $primaryColor;
+      width: 32px;
+      height: 32px;
+      left: 16px;
+      bottom: 16px;
+
+      transition: none;
+      z-index: 2;
+    }
+
+    &:hover::before {
+      transition: all 150ms ease-in-out;
+      border-bottom: 4px solid $accentColor;
+      border-left: 0;
+      width: 240px;
+      left: 320px;
+      bottom: 16px;
+
+      z-index: 2;
+    }
+  }
+}
+
+.menuBottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $primaryColor;
+  position: relative;
+  padding: 32px 100px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 200px; // Adjust the height as needed
+    background-color: $primaryColor;
+    transform: skewY(4deg); // Adjust the angle as needed
+    transform-origin: top right;
+    z-index: -1;
+  }
+
+  .menuBottomLeft {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 16px;
+
+    h2 {
+      color: $secondaryColor;
+      margin-bottom: unset;
+    }
+
+    .copyEmail {
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+
+      .copyEmailText {
+        display: flex;
+        gap: 8px;
+        transition: all 150ms ease-in-out;
+
+        &:hover {
+          transform: scale(1.01);
+        }
+
+        &:active {
+          mat-icon {
+            color: $accentColor;
+          }
+        }
+
+        span {
+          color: $secondaryColor;
+          transition: all 150ms ease-in-out;
+          font-size: 23px;
+          line-height: 120%; /* 27.6px */
+        }
+
+        mat-icon {
+          color: $secondaryColor;
+          transition: all 150ms ease-in-out;
+        }
+      }
+
+      &:active {
+        mat-icon {
+          color: $accentColor;
+        }
+      }
+    }
+  }
+
+  .copyMessage {
+    color: $accentColor;
+    margin-top: 10px;
+    opacity: 0; // Start with the message invisible
+    transition: opacity 0.5s ease-in-out; // Smooth transition for the opacity
+
+    &.visible {
+      opacity: 1; // Fully visible when class 'visible' is added
+    }
+  }
+
+  .menuBottomRight {
+    display: flex;
+    gap: 42px;
+
+    a {
+      display: flex;
+      width: 40px;
+      height: 40px;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 10px;
+      transition: all 5000ms ease-in-out;
+
+      &:hover img {
+        margin-bottom: 10px;
+      }
+    }
+
+    img {
+      width: 30px;
+      transition: all 150ms ease-in-out;
+    }
+  }
 }
