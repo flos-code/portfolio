@@ -81,8 +81,15 @@ header {
       width: 240px;
       left: 320px;
       bottom: 16px;
+    }
 
-      z-index: 2;
+    &:active::before {
+      transition: all 150ms ease-in-out;
+      border: 4px solid $primaryColor;
+      width: calc(640px - 32px);
+      height: calc(120px - 32px);
+      left: 16px;
+      // bottom: 16px;
     }
   }
 }
