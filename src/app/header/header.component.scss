@@ -20,7 +20,7 @@ header {
 }
 
 .menu {
-  position: absolute;
+  position: fixed;
   top: 98px;
   left: 0;
   right: 0;
@@ -114,9 +114,12 @@ header {
     justify-content: center;
     gap: 16px;
 
-    h2 {
-      color: $secondaryColor;
-      margin-bottom: unset;
+    a {
+      text-decoration: none;
+      h2 {
+        color: $secondaryColor;
+        margin-bottom: unset;
+      }
     }
 
     .copyEmail {

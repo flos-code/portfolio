@@ -336,3 +336,27 @@ body {
   font-size: 14px;
   line-height: 120%; /* 16.8px */
 }
+
+//Scrollbar
+
+/* For Webkit browsers like Chrome, Safari */
+::-webkit-scrollbar {
+  width: 12px; // Adjust the width of the scrollbar
+}
+
+::-webkit-scrollbar-track {
+  background: transparent; // Optional: define the track background color
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: $accentColor;
+  border-radius: 6px; // Optional: if you want rounded corners
+  border: 3px solid transparent; // Optional: for inset look
+  background-clip: content-box;
+}
+
+/* For Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: $accentColor transparent; // Thumb and track color
+}

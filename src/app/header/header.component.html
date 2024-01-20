@@ -9,14 +9,15 @@
 </header>
 <div class="menu" [class.visible]="showMenu">
   <div class="menuLinks">
-    <a href="#about">About me</a>
-    <a href="#skills">My skills</a>
-    <a href="#portfolio">Portfolio</a>
+    <a (click)="toggleMenu()" href="#about">About me</a>
+    <a (click)="toggleMenu()" href="#skills">My skills</a>
+    <a (click)="toggleMenu()" href="#portfolio">Portfolio</a>
   </div>
 
   <div class="menuBottom">
     <div class="menuBottomLeft">
-      <h2>Say hi!</h2>
+      <a (click)="toggleMenu()" href="#contact"> <h2>Say hi!</h2></a>
+
       <div
         class="copyEmail"
         (click)="copyEmailToClipboard('f.scholz.dev@outlook.com')"

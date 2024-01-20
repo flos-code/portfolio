@@ -38,25 +38,25 @@ export class HeaderComponent {
   }
 
   animateBurgerToX(): void {
-    const animationSteps = 5; // Assuming you want to show images 1 through 4
-    let step = 0;
+    let animationSteps: number = 5; // Assuming you want to show images 1 through 4
+    let i: number = 0;
     const interval = setInterval(() => {
-      this.currentBurgerIndex = step;
-      step++;
-      if (step === animationSteps) {
+      this.currentBurgerIndex = i;
+      i++;
+      if (i === animationSteps) {
         clearInterval(interval);
       }
     }, 100); // Adjust the interval time (100ms) as needed
   }
 
   animateBurgerBack(): void {
-    const animationSteps = 9; // Assuming you want to show images 1 through 4
-    let step = 5;
+    let animationSteps: number = 9; // Assuming you want to show images 1 through 4
+    let i: number = 5;
     const interval = setInterval(() => {
-      this.currentBurgerIndex = step;
-      step++;
+      this.currentBurgerIndex = i;
+      i++;
 
-      if (step === animationSteps) {
+      if (i === animationSteps) {
         clearInterval(interval);
         this.currentBurgerIndex = 0;
       }
