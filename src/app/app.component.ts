@@ -5,6 +5,8 @@ import { HeaderComponent } from './shared/components/header/header.component';
 import { FooterComponent } from './shared/components/footer/footer.component';
 import { MouseTrailComponent } from './shared/components/mouse-trail/mouse-trail.component';
 import { MainContentComponent } from './main-content/main-content.component';
+import { ImprintComponent } from './imprint/imprint.component';
+import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 
 @Component({
   selector: 'app-root',
@@ -16,6 +18,8 @@ import { MainContentComponent } from './main-content/main-content.component';
     MainContentComponent,
     FooterComponent,
     MouseTrailComponent,
+    ImprintComponent,
+    PrivacyPolicyComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
