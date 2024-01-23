@@ -9,12 +9,27 @@
 </header>
 <div class="menu" [class.visible]="showMenu">
   <div class="menuLinks">
-    <a (click)="toggleMenu()" href="#about">About me</a>
-    <a (click)="toggleMenu()" href="#skills">My skills</a>
-    <a (click)="toggleMenu()" href="#portfolio">Portfolio</a>
+    <a
+      [ngClass]="{ animateMenuLink0: showMenu }"
+      (click)="toggleMenu()"
+      href="#about"
+      >About me</a
+    >
+    <a
+      [ngClass]="{ animateMenuLink1: showMenu }"
+      (click)="toggleMenu()"
+      href="#skills"
+      >My skills</a
+    >
+    <a
+      [ngClass]="{ animateMenuLink2: showMenu }"
+      (click)="toggleMenu()"
+      href="#portfolio"
+      >Portfolio</a
+    >
   </div>
 
-  <div class="menuBottom">
+  <div [ngClass]="{ animateMenuFooter: showMenu }" class="menuBottom">
     <div class="menuBottomLeft">
       <a (click)="toggleMenu()" href="#contact"> <h2>Say hi!</h2></a>
 

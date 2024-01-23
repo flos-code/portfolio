@@ -254,3 +254,41 @@ header {
     }
   }
 }
+
+.animateMenuLink0 {
+  animation: slideMenuIn 750ms ease-in-out forwards;
+}
+
+.animateMenuLink1 {
+  animation: slideMenuIn 900ms ease-in-out forwards;
+}
+
+.animateMenuLink2 {
+  animation: slideMenuIn 1050ms ease-in-out forwards;
+}
+
+.animateMenuFooter {
+  animation: slideMenuFooterIn 900ms ease-in-out forwards;
+}
+
+@keyframes slideMenuIn {
+  from {
+    transform: translateX(200px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideMenuFooterIn {
+  from {
+    transform: translateY(200px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
