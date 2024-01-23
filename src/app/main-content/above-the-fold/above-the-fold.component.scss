@@ -12,17 +12,21 @@
   flex-direction: column;
   align-items: center;
 
-  h1 {
-    text-align: center;
-    font-family: "Syne";
-    font-size: 128px;
-    font-weight: 800;
-    letter-spacing: -3.2px;
-    margin-block: unset;
-    margin-top: -36px;
+  .heading {
+    animation: slideInHeading 750ms ease-in-out forwards;
+    h1 {
+      text-align: center;
+      font-family: "Syne";
+      font-size: 128px;
+      font-weight: 800;
+      letter-spacing: -3.2px;
+      margin-block: unset;
+      margin-top: -36px;
+    }
   }
 
   .underline {
+    animation: slideInUnderline 750ms ease-in-out forwards;
     display: flex;
     align-items: center;
 
@@ -33,6 +37,28 @@
       font-weight: 700;
       letter-spacing: -1.2px;
       margin: 0 8px;
+    }
+  }
+
+  @keyframes slideInHeading {
+    from {
+      transform: translateY(-100px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideInUnderline {
+    from {
+      transform: translateY(100px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
     }
   }
 }

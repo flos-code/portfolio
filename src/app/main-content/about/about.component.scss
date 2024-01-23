@@ -4,6 +4,7 @@
   display: flex;
   flex-direction: column;
   padding: 0 100px;
+  overflow-x: hidden;
 }
 
 .aboutContainerTop {
@@ -15,6 +16,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  opacity: 0;
 
   p {
     width: 610px;
@@ -28,6 +30,7 @@
   }
 }
 .aboutImg {
+  opacity: 0;
   .profileImage {
     position: relative;
     width: 553px;
@@ -58,5 +61,35 @@
   img {
     margin-top: 48px;
     margin-right: 120px;
+  }
+}
+
+.animateAboutText {
+  animation: slideTextIn 750ms ease-in-out forwards;
+}
+
+.animateAboutImage {
+  animation: slideImageIn 750ms ease-in-out forwards;
+}
+
+@keyframes slideTextIn {
+  from {
+    transform: translateX(-200px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideImageIn {
+  from {
+    transform: translateX(200px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
   }
 }

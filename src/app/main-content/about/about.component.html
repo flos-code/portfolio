@@ -1,6 +1,6 @@
 <section class="aboutContainer">
   <div class="aboutContainerTop">
-    <div class="aboutText">
+    <div class="aboutText" [ngClass]="{ animateAboutText: isSectionVisible }">
       <h2>About me</h2>
       <p>
         I am a Front-end developer based in Munich, Germany. I enjoy helping
@@ -10,9 +10,9 @@
         <br /><br />
         If you think I'd be a good match for your projects, contact me!
       </p>
-      <button class="mainButton">Let's talk</button>
+      <a href="#contact"> <button class="mainButton">Let's talk</button></a>
     </div>
-    <div class="aboutImg">
+    <div class="aboutImg" [ngClass]="{ animateAboutImage: isSectionVisible }">
       <div class="profileImage">
         <img src="/assets/img/florian_scholz.jpeg" alt="Florian Scholz" />
         <img

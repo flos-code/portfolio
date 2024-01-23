@@ -4,6 +4,7 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
+  opacity: 0;
 }
 
 .projectImg {
@@ -170,5 +171,35 @@
 
   .projectText {
     margin-left: 32px;
+  }
+}
+
+.animateOddProject {
+  animation: slideFromLeft 750ms ease-in-out forwards;
+}
+
+.animateEvenProject {
+  animation: slideFromRight 750ms ease-in-out forwards;
+}
+
+@keyframes slideFromLeft {
+  from {
+    transform: translateX(-200px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideFromRight {
+  from {
+    transform: translateX(200px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
   }
 }

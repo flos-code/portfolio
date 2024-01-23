@@ -3,8 +3,12 @@
   [ngClass]="{
     oddProjectContainer: index % 2 === 0,
     evenProjectContainer: index % 2 !== 0,
-    hoverState: isHovered
+    hoverState: isHovered,
+    animateOddProject: isSectionOddVisible,
+    animateEvenProject: isSectionEvenVisible,
+
   }"
+  [class]="'project-' + index"
 >
   <div class="projectImg">
     <img

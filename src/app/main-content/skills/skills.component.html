@@ -2,7 +2,12 @@
   <h2>My Skills</h2>
   <div class="skillsImagesBorder">
     <div class="skillsImages">
-      <div *ngFor="let skill of skills" class="skill">
+      <div
+        *ngFor="let skill of skills"
+        class="skill"
+        [ngClass]="{ animateSkill: isSectionVisible }"
+        [style.animation-duration]="skill.animationDuration"
+      >
         <img [src]="skill.imgPath" [alt]="skill.name" />
         <span>{{ skill.name }}</span>
       </div>

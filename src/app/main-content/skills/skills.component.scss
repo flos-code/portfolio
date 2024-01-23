@@ -36,6 +36,7 @@ h2 {
     // height: 104px;
     gap: 16px;
     overflow: hidden;
+    opacity: 0;
 
     img {
       //   transform: translate(40px);
@@ -99,5 +100,20 @@ h2 {
     transform: scaleX(-1);
     margin-top: 48px;
     margin-left: 120px;
+  }
+}
+
+.animateSkill {
+  animation: zoomInSkills 750ms ease-in-out forwards;
+}
+
+@keyframes zoomInSkills {
+  from {
+    transform: scale(0.2);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
   }
 }

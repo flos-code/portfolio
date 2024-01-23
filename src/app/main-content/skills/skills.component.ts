@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-skills',
@@ -9,6 +9,7 @@ import { Component } from '@angular/core';
   styleUrl: './skills.component.scss',
 })
 export class SkillsComponent {
+  isSectionVisible: boolean = false;
   skills = [
     {
       name: 'HTML',
@@ -50,7 +51,10 @@ export class SkillsComponent {
       name: 'Firebase',
       imgPath: '/assets/icons/Firebase.svg',
     },
-  ];
+  ].map((skill) => ({
+    ...skill,
+    animationDuration: this.getRandomDuration() + 'ms', // Assign random duration here
+  }));
 
   hoveredArrow: boolean = false;
   hoveredArrowDelay: boolean = false;
@@ -72,5 +76,24 @@ export class SkillsComponent {
     } else {
       return this.arrowImagesLeft[0];
     }
+  }
+
+  @HostListener('window:scroll', ['$event'])
+  checkScroll() {
+    const section = document.querySelector('.skillsContainer'); // Adjust the selector as needed
+
+    if (section) {
+      const sectionTop = section.getBoundingClientRect().top;
+      const sectionHeight = section.clientHeight;
+      const windowHeight = window.innerHeight;
+
+      if (sectionTop <= windowHeight - sectionHeight / 3) {
+        this.isSectionVisible = true;
+      }
+    }
+  }
+
+  getRandomDuration() {
+    return Math.random() * (750 - 150) + 150; // Random duration between 150ms and 750ms
   }
 }

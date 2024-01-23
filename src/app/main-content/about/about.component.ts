@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-about',
@@ -9,6 +9,7 @@ import { Component } from '@angular/core';
   styleUrl: './about.component.scss',
 })
 export class AboutComponent {
+  isSectionVisible: boolean = false;
   hoveredArrow: boolean = false;
   hoveredArrowDelay: boolean = false;
   hoveredProfileImage: boolean = false;
@@ -18,6 +19,20 @@ export class AboutComponent {
     '/assets/img/arrow_left_01.png',
     '/assets/img/arrow_left_02.png',
   ];
+  @HostListener('window:scroll', ['$event'])
+  checkScroll() {
+    const section = document.querySelector('.aboutContainer'); // Adjust the selector as needed
+
+    if (section) {
+      const sectionTop = section.getBoundingClientRect().top;
+      const sectionHeight = section.clientHeight;
+      const windowHeight = window.innerHeight;
+
+      if (sectionTop <= windowHeight - sectionHeight / 3) {
+        this.isSectionVisible = true;
+      }
+    }
+  }
 
   getImageSrc(): string {
     if (this.hoveredArrow && !this.hoveredArrowDelay) {
