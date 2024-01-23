@@ -28,63 +28,69 @@ footer {
 
   .footerRight {
     display: flex;
-    gap: 42px;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 90px;
 
-    a {
+    .footerSocials {
       display: flex;
-      width: 40px;
-      height: 40px;
-      flex-direction: column;
-      justify-content: flex-end;
-      align-items: center;
-      gap: 10px;
-      transition: all 5000ms ease-in-out;
+      gap: 42px;
 
-      &:hover img {
-        margin-bottom: 10px;
+      a {
+        display: flex;
+        width: 40px;
+        height: 40px;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 10px;
+        transition: all 5000ms ease-in-out;
+
+        &:hover img {
+          margin-bottom: 10px;
+        }
+      }
+
+      img {
+        width: 30px;
+        transition: all 150ms ease-in-out;
       }
     }
 
-    img {
-      width: 30px;
-      transition: all 150ms ease-in-out;
-    }
-  }
-}
+    .legalNotice {
+      display: flex;
+      justify-content: flex-end;
 
-.legalNotice {
-  display: flex;
-  justify-content: flex-end;
+      a {
+        display: inline-flex;
+        padding: 5px 10px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 3px;
+        text-decoration: none;
 
-  a {
-    display: inline-flex;
-    padding: 5px 10px;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 3px;
-    text-decoration: none;
+        span {
+          color: $secondaryColor;
+          font-size: 16px;
+          line-height: 120%;
+        }
 
-    span {
-      color: $secondaryColor;
-      font-size: 16px;
-      line-height: 120%;
-    }
+        div {
+          width: 56px;
+          height: 2px;
+          transition: all 150ms ease-in-out;
+        }
 
-    div {
-      width: 56px;
-      height: 0;
-      transition: all 150ms ease-in-out;
-    }
+        &:hover span {
+          font-weight: 700;
+        }
 
-    &:hover span {
-      font-weight: 700;
-    }
-
-    &:hover div {
-      background-color: $accentColor;
-      height: 2px;
-      border-radius: 1px;
-      margin-left: 36px;
+        &:hover div {
+          background-color: $accentColor;
+          border-radius: 1px;
+          margin-left: 36px;
+        }
+      }
     }
   }
 }

@@ -1,0 +1,64 @@
+@import "../../styles.scss";
+
+.imprintContainer {
+  flex-direction: column;
+  padding-top: 100px;
+  height: calc(100vh - 244px);
+
+  h1 {
+    font-size: 32px;
+    font-weight: 600;
+    font-family: "Syne";
+    margin-block: unset;
+    margin-bottom: 32px;
+  }
+
+  h2 {
+    font-size: 26px;
+    font-weight: 600;
+    font-family: "Syne";
+    letter-spacing: normal;
+    margin-bottom: 16px;
+
+    &:hover {
+      color: $primaryColor !important;
+    }
+  }
+
+  p {
+    font-family: "Overpass";
+    font-size: 20px;
+    margin-block: unset;
+    margin-bottom: 16px;
+  }
+
+  mat-icon {
+    position: fixed;
+    right: 250px;
+    bottom: 250px;
+    width: 48px;
+    height: 48px;
+    font-size: 40px;
+    border-radius: 50%;
+    border: 4px solid $primaryColor;
+    background-color: $secondaryColor;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 150ms ease-in-out;
+
+    &:hover {
+      cursor: pointer;
+      border: 4px solid $accentColor;
+      color: $accentColor;
+      box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.15);
+    }
+
+    &:active {
+      background-color: $accentColor;
+      color: $secondaryColor;
+      border: 4px solid $accentColor;
+      box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.15);
+    }
+  }
+}
