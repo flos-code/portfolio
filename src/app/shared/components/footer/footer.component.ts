@@ -1,12 +1,56 @@
-import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-footer',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './footer.component.html',
-  styleUrl: './footer.component.scss'
+  styleUrl: './footer.component.scss',
 })
 export class FooterComponent {
+  letters: string = 'abcdefghijklmnopqrstuvwxyz1234567890<>$%&/()}{!?';
+  interval: number | undefined;
+  @ViewChild('logo') logoElement!: ElementRef;
 
+  ngAfterViewInit(): void {
+    const logo = this.logoElement.nativeElement;
+    logo.onmouseover = (event: MouseEvent) => this.randomizeLetters(event);
+  }
+
+  randomizeLetters(event: MouseEvent): void {
+    let iteration = 0;
+    if (this.interval !== undefined) {
+      clearInterval(this.interval);
+    }
+
+    this.interval = setInterval(() => {
+      const target = event.target as HTMLElement; // Cast event.target to HTMLElement
+
+      // Check if dataset['value'] is defined
+      const datasetValue = target.dataset['value'];
+      if (!datasetValue) {
+        clearInterval(this.interval);
+        this.interval = undefined;
+        return;
+      }
+
+      target.innerText = target.innerText
+        .split('')
+        .map((letter, index) => {
+          if (index < iteration) {
+            return datasetValue[index];
+          }
+          return this.letters[Math.floor(Math.random() * this.letters.length)];
+        })
+        .join('');
+
+      if (iteration >= datasetValue.length) {
+        clearInterval(this.interval);
+        this.interval = undefined;
+      }
+
+      iteration += 1 / 5;
+    }, 30) as unknown as number;
+  }
 }
