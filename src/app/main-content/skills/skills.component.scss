@@ -25,6 +25,7 @@ h2 {
     display: flex;
     gap: 80px 128px;
     flex-wrap: wrap;
+    justify-content: center;
   }
 
   .skill {
@@ -116,4 +117,7 @@ h2 {
     transform: scale(1);
     opacity: 1;
   }
+}
+
+@media screen and (max-width: 1439px) {
 }

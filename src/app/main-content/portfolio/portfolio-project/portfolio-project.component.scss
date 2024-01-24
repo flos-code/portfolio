@@ -1,7 +1,7 @@
 @import "../../../../styles.scss";
 
 .projectContainer {
-  width: 100%;
+  // width: 100%;
   display: flex;
   justify-content: space-between;
   opacity: 0;
@@ -9,14 +9,22 @@
 
 .projectImg {
   width: 620px;
+  height: 400px;
+  object-fit: cover;
   position: relative;
   z-index: 2;
 
   .hoverProjectImg {
     filter: grayscale(1);
     width: 620px;
-    height: 393px;
+    height: 400px;
+
     transition: filter 150ms linear;
+  }
+
+  .hoverProject {
+    width: 620px;
+    height: 400px;
   }
 
   .hoverProject,
@@ -201,5 +209,52 @@
   to {
     transform: translateX(0);
     opacity: 1;
+  }
+}
+
+@media screen and (max-width: 1439px) {
+  .projectContainer {
+    width: 1000px;
+  }
+
+  .projectImg {
+    width: 540px;
+    height: 350px;
+
+    .hoverProjectImg {
+      width: 540px;
+      height: 350px;
+    }
+
+    .hoverProject {
+      width: 540px;
+      height: 350px;
+    }
+  }
+
+  .oddProjectContainer {
+    flex-direction: row;
+
+    .hoverProjectArrow {
+      left: 500px;
+    }
+
+    .projectText {
+      margin-right: 0;
+    }
+  }
+
+  .evenProjectContainer {
+    .hoverProjectArrow {
+      right: 500px;
+    }
+  }
+
+  .projectText {
+    width: 380px;
+  }
+
+  .projectLinks {
+    gap: 24px;
   }
 }

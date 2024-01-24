@@ -9,7 +9,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 30px 100px;
+  padding: 32px calc((100vw - 1200px) / 2);
   background-color: $secondaryColor;
   z-index: 3;
 
@@ -110,7 +110,7 @@ header {
   align-items: center;
   background-color: $primaryColor;
   position: relative;
-  padding: 32px 100px;
+  padding: 0 calc((100vw - 1200px) / 2);
 
   &::before {
     content: "";
@@ -302,5 +302,15 @@ header {
   to {
     transform: translateY(0);
     opacity: 1;
+  }
+}
+
+@media screen and (max-width: 1439px) {
+  header {
+    padding: 32px calc((100vw - 1000px) / 2);
+  }
+
+  .menuBottom {
+    padding: 0 calc((100vw - 1000px) / 2);
   }
 }

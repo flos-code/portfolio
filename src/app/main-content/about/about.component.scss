@@ -1,15 +1,13 @@
 @import "../../../styles.scss";
 
 .aboutContainer {
-  display: flex;
   flex-direction: column;
-  padding: 0 100px;
-  overflow-x: hidden;
 }
 
 .aboutContainerTop {
   display: flex;
   justify-content: space-between;
+  align-items: baseline;
 }
 
 .aboutText {
@@ -26,14 +24,14 @@
   }
 
   button {
-    margin-top: 88px;
+    margin-top: 80px;
   }
 }
 .aboutImg {
   opacity: 0;
   .profileImage {
     position: relative;
-    width: 553px;
+    width: 480px;
 
     &:hover .hoverProfileImage {
       opacity: 1;
@@ -41,8 +39,8 @@
     }
     img {
       position: absolute;
-      width: 553px;
-      height: 553px;
+      width: 480px;
+      height: 480px;
     }
     .hoverProfileImage {
       top: 0;
@@ -91,5 +89,27 @@
   to {
     transform: translateX(0);
     opacity: 1;
+  }
+}
+
+@media screen and (max-width: 1439px) {
+  .aboutText {
+    p {
+      width: 510px;
+    }
+
+    button {
+      margin-top: 64px;
+    }
+  }
+
+  .aboutImg {
+    .profileImage {
+      width: 440px;
+      img {
+        width: 440px;
+        height: 440px;
+      }
+    }
   }
 }

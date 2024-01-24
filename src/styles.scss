@@ -217,7 +217,7 @@ body {
 
 section {
   display: flex;
-  padding: 0 100px;
+  padding: 0 calc((100vw - 1200px) / 2);
 }
 
 h2 {
@@ -368,4 +368,25 @@ body {
 * {
   scrollbar-width: thin;
   scrollbar-color: $accentColor transparent; // Thumb and track color
+}
+
+@media screen and (max-width: 1439px) {
+  section {
+    padding: 0 calc((100vw - 1000px) / 2);
+  }
+
+  h2 {
+    font-size: 64px;
+    margin-bottom: 32px;
+  }
+
+  .mainButton {
+    padding: 16px 48px;
+    &:hover:enabled {
+      padding: 16px 64px;
+    }
+    &:active:enabled {
+      padding: 16px 64px;
+    }
+  }
 }
