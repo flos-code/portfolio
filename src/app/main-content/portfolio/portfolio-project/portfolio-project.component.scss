@@ -74,7 +74,6 @@
 
   .usedTools {
     color: $accentColor;
-    font-size: 23px;
     line-height: 120%; /* 27.6px */
   }
 
@@ -233,8 +232,6 @@
   }
 
   .oddProjectContainer {
-    flex-direction: row;
-
     .hoverProjectArrow {
       left: 500px;
     }
@@ -248,6 +245,10 @@
     .hoverProjectArrow {
       right: 500px;
     }
+
+    .projectText {
+      margin-left: 0;
+    }
   }
 
   .projectText {
@@ -256,5 +257,74 @@
 
   .projectLinks {
     gap: 24px;
+  }
+}
+
+@media screen and (max-width: 1279px) {
+  .projectContainer {
+    width: 800px;
+  }
+
+  .projectImg {
+    width: 360px;
+    height: 230px;
+
+    .hoverProjectImg {
+      width: 360px;
+      height: 230px;
+    }
+
+    .hoverProject {
+      width: 360px;
+      height: 230px;
+    }
+
+    .hoverProjectArrow {
+      top: 100px;
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  .oddProjectContainer {
+    .hoverProjectArrow {
+      left: 335px;
+    }
+  }
+
+  .evenProjectContainer {
+    .hoverProjectArrow {
+      right: 335px;
+    }
+  }
+
+  .projectInfo {
+    gap: 0;
+
+    .projectCounter {
+      font-size: 40px;
+      line-height: 100%;
+    }
+  }
+
+  .projectText {
+    gap: 8px;
+    h3 {
+      font-size: 36px;
+    }
+  }
+
+  .projectLinks {
+    gap: 24px;
+  }
+
+  .oddProjectContainer.hoverState .hoverProjectArrow {
+    width: 48px;
+    height: 48px;
+  }
+
+  .evenProjectContainer.hoverState .hoverProjectArrow {
+    width: 48px;
+    height: 48px;
   }
 }

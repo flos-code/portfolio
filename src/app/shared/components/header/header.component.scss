@@ -162,7 +162,6 @@ header {
         span {
           color: $secondaryColor;
           transition: all 150ms ease-in-out;
-          font-size: 23px;
           line-height: 120%; /* 27.6px */
         }
 
@@ -312,5 +311,15 @@ header {
 
   .menuBottom {
     padding: 0 calc((100vw - 1000px) / 2);
+  }
+}
+
+@media screen and (max-width: 1279px) {
+  header {
+    padding: 32px calc((100vw - 800px) / 2);
+  }
+
+  .menuBottom {
+    padding: 0 calc((100vw - 800px) / 2);
   }
 }

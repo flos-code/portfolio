@@ -1,6 +1,7 @@
 .portfolioContainer {
   flex-direction: column;
   margin-bottom: 32px;
+  overflow-x: hidden;
 }
 
 .portfolioHeading {
@@ -10,7 +11,6 @@
   margin-bottom: 64px;
   span {
     display: block;
-    font-size: 23px;
     line-height: 120%;
     width: 525px;
     text-align: center;

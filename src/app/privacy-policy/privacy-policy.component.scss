@@ -85,7 +85,17 @@
 }
 
 @media screen and (max-width: 1439px) {
-  mat-icon {
-    right: calc((100vw - 1000px) / 2 + 80px);
+  .privacyPolicyContainer {
+    mat-icon {
+      right: calc((100vw - 1000px) / 2 + 80px);
+    }
+  }
+}
+
+@media screen and (max-width: 1279px) {
+  .privacyPolicyContainer {
+    mat-icon {
+      right: calc((100vw - 800px) / 2 + 40px);
+    }
   }
 }

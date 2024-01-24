@@ -2,6 +2,7 @@
 
 .aboutContainer {
   flex-direction: column;
+  overflow-x: hidden;
 }
 
 .aboutContainerTop {
@@ -18,7 +19,6 @@
 
   p {
     width: 610px;
-    font-size: 23px;
     line-height: 120%;
     margin-block: unset;
   }
@@ -109,6 +109,28 @@
       img {
         width: 440px;
         height: 440px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1279px) {
+  .aboutText {
+    p {
+      width: 385px;
+    }
+
+    button {
+      margin-top: 32px;
+    }
+  }
+
+  .aboutImg {
+    .profileImage {
+      width: 360px;
+      img {
+        width: 360px;
+        height: 360px;
       }
     }
   }

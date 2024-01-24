@@ -120,4 +120,24 @@ h2 {
 }
 
 @media screen and (max-width: 1439px) {
+  h2 {
+    margin-bottom: -40px;
+  }
+
+  .skillsImagesBorder {
+    .skillsImages {
+      padding: 80px 48px;
+      gap: 64px 96px;
+    }
+  }
+}
+
+@media screen and (max-width: 1439px) {
+  h2 {
+    margin-bottom: -32px;
+  }
+
+  .skillsImagesBorder {
+    border: 3px solid $primaryColor;
+  }
 }

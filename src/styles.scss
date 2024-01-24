@@ -213,6 +213,7 @@ body {
   margin: 0;
   background-color: $secondaryColor;
   font-family: "Overpass";
+  font-size: 23px;
 }
 
 section {
@@ -387,6 +388,32 @@ body {
     }
     &:active:enabled {
       padding: 16px 64px;
+    }
+  }
+}
+
+@media screen and (max-width: 1279px) {
+  section {
+    padding: 0 calc((100vw - 800px) / 2);
+  }
+
+  h2 {
+    font-size: 48px;
+  }
+
+  body {
+    font-size: 20px;
+  }
+
+  .mainButton {
+    border: 3px solid $primaryColor;
+    font-size: 20px;
+    padding: 12px 40px;
+    &:hover:enabled {
+      padding: 12px 56px;
+    }
+    &:active:enabled {
+      padding: 12px 56px;
     }
   }
 }
