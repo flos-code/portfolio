@@ -195,8 +195,10 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 240px;
+    width: 260px;
+    height: 90px;
     gap: 16px;
+
     .menuBottomSocials {
       display: flex;
       gap: 42px;
