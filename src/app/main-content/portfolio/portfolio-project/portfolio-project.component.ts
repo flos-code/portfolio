@@ -25,8 +25,12 @@ export class PortfolioProjectComponent {
 
   @HostListener('window:scroll', ['$event'])
   checkScroll() {
-    const section = document.querySelector('.project-' + this.index); // Adjust the selector as needed
+    this.checkSectionVisibility();
+    this.checkAndApplyHoverEffect();
+  }
 
+  checkSectionVisibility() {
+    const section = document.querySelector('.project-' + this.index);
     if (section) {
       const sectionTop = section.getBoundingClientRect().top;
       const sectionHeight = section.clientHeight;
@@ -40,5 +44,20 @@ export class PortfolioProjectComponent {
         }
       }
     }
+  }
+
+  checkAndApplyHoverEffect() {
+    if (
+      this.isTouchDevice() &&
+      (this.isSectionOddVisible || this.isSectionEvenVisible)
+    ) {
+      setTimeout(() => {
+        this.isHovered = true;
+      }, 750); // Adjust the time based on your animation duration
+    }
+  }
+
+  isTouchDevice() {
+    return 'ontouchstart' in window || navigator.maxTouchPoints > 0;
   }
 }

@@ -387,7 +387,7 @@ body {
       padding: 16px 64px;
     }
     &:active:enabled {
-      padding: 16px 64px;
+      padding: 16px 64px !important;
     }
   }
 }
@@ -413,7 +413,7 @@ body {
       padding: 12px 56px;
     }
     &:active:enabled {
-      padding: 12px 56px;
+      padding: 12px 56px !important;
     }
   }
 }

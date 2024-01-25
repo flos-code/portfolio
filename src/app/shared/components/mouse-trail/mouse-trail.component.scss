@@ -63,3 +63,12 @@
   //   opacity: 0;
   transition: opacity 500ms ease;
 }
+
+@media (hover: none) and (pointer: coarse) {
+  .tail,
+  .tail2,
+  .tail3,
+  .tail4 {
+    display: none;
+  }
+}
