@@ -51,6 +51,8 @@
   a {
     text-decoration: none;
     color: $accentColor;
+    word-wrap: break-word; /* Older browsers */
+    overflow-wrap: break-word; /* Newer CSS property */
   }
 
   mat-icon {
@@ -128,6 +130,7 @@
   .privacyPolicyContainer {
     mat-icon {
       right: calc((100vw - 300px) / 2 + 32px);
+      bottom: 180px;
     }
   }
 }
