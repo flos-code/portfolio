@@ -480,3 +480,52 @@
     height: 56px;
   }
 }
+
+@media screen and (max-width: 599px) {
+  .projectContainer {
+    width: 360px;
+  }
+
+  .oddProjectContainer {
+    .hoverProjectArrow {
+      left: 280px;
+    }
+  }
+
+  .evenProjectContainer {
+    .hoverProjectArrow {
+      right: 260px;
+    }
+  }
+
+  .projectImg {
+    width: 360px;
+    height: 230px;
+
+    .hoverProjectImg {
+      width: 360px;
+      height: 230px;
+    }
+
+    .hoverProject {
+      width: 360px;
+      height: 230px;
+    }
+
+    .hoverProjectArrow {
+      top: 205px;
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  .oddProjectContainer.hoverState .hoverProjectArrow {
+    width: 48px;
+    height: 48px;
+  }
+
+  .evenProjectContainer.hoverState .hoverProjectArrow {
+    width: 48px;
+    height: 48px;
+  }
+}

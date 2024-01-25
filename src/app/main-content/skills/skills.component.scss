@@ -21,7 +21,7 @@ h2 {
 
   .skillsImages {
     max-width: calc(500px + 4 * 128px);
-    padding: 160px 80px;
+    padding: 120px 80px 80px 80px;
     display: flex;
     gap: 80px 128px;
     flex-wrap: wrap;
@@ -125,7 +125,7 @@ h2 {
 
   .skillsImagesBorder {
     .skillsImages {
-      padding: 80px 48px;
+      padding: 80px 48px 48px 48px;
       gap: 64px 96px;
     }
   }
@@ -138,5 +138,39 @@ h2 {
 
   .skillsImagesBorder {
     border: 3px solid $primaryColor;
+  }
+}
+
+@media screen and (max-width: 839px) {
+  .skillsImagesBorder {
+    .skillsImages {
+      padding: 64px 32px 32px 32px;
+      gap: 48px 64px;
+
+      .skill {
+        width: 80px;
+        gap: 12px;
+        img {
+          width: 60px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .skillsImagesBorder {
+    .skillsImages {
+      padding: 64px 24px 24px 24px;
+      gap: 32px 48px;
+
+      .skill {
+        width: 80px;
+        gap: 12px;
+        img {
+          width: 60px;
+        }
+      }
+    }
   }
 }

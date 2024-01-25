@@ -44,4 +44,19 @@
       width: 480px;
     }
   }
+  .singleProject {
+    margin-bottom: 48px;
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .portfolioHeading {
+    span {
+      width: 360px;
+    }
+  }
+
+  .singleProject {
+    margin-bottom: 32px;
+  }
 }

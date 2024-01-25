@@ -171,4 +171,22 @@
   .contactForm {
     width: 480px;
   }
+
+  .contactFormHeading {
+    span {
+      width: 480px;
+    }
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .contactForm {
+    width: 360px;
+  }
+
+  .contactFormHeading {
+    span {
+      width: 360px;
+    }
+  }
 }

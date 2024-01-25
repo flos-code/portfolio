@@ -179,3 +179,31 @@
     }
   }
 }
+
+@media screen and (max-width: 599px) {
+  .atfContainer {
+    .atfContainerTop {
+      .heading {
+        h1 {
+          font-size: 48px;
+          margin-top: -20px;
+        }
+      }
+    }
+
+    .underline {
+      span {
+        font-size: 20px;
+        line-height: 20px;
+      }
+    }
+
+    .atfContainerBottom {
+      padding: 0;
+
+      .rotatedMail {
+        margin-left: 16px;
+      }
+    }
+  }
+}

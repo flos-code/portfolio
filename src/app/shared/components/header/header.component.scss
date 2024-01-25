@@ -339,9 +339,6 @@ header {
     padding: 32px calc((100vw - 500px) / 2);
   }
 
-  .menuBottom {
-  }
-
   .menuLinks {
     a {
       font-size: 64px;
@@ -378,6 +375,46 @@ header {
 
     .menuBottomRight {
       align-self: flex-end;
+    }
+  }
+}
+
+@media screen and (max-width: 599px) {
+  header {
+    padding: 24px calc((100vw - 400px) / 2);
+  }
+
+  .menuBottom {
+    padding: 0 calc((100vw - 400px) / 2) 32px calc((100vw - 400px) / 2);
+  }
+
+  .menu {
+    top: 82px;
+  }
+
+  .menuLinks {
+    a {
+      font-size: 56px;
+      width: 360px;
+      height: 90px;
+
+      &::before {
+        width: 16px;
+        height: 16px;
+        left: 16px;
+        bottom: 12px;
+      }
+
+      &:hover::before {
+        width: 160px;
+        left: 180px;
+      }
+
+      &:active::before {
+        width: calc(360px - 48px);
+        height: calc(90px - 24px);
+        left: 16px;
+      }
     }
   }
 }
