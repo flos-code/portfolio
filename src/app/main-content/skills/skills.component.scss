@@ -174,3 +174,23 @@ h2 {
     }
   }
 }
+
+@media screen and (max-width: 479px) {
+  h2 {
+    margin-bottom: -20px;
+  }
+
+  .skillsImagesBorder {
+    .skillsImages {
+      padding: 64px 8px 12px 8px;
+      gap: 24px 16px;
+    }
+  }
+
+  .skillsArrow {
+    img {
+      margin-top: 24px;
+      margin-left: 48px;
+    }
+  }
+}

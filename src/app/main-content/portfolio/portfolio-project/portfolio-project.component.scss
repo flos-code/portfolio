@@ -529,3 +529,75 @@
     height: 48px;
   }
 }
+
+@media screen and (max-width: 479px) {
+  .projectContainer {
+    width: 280px;
+    gap: 24px;
+
+    .projectCounterMobile {
+      font-size: 28px;
+    }
+  }
+
+  .projectText {
+    width: 280px;
+
+    h3 {
+      font-size: 28px;
+    }
+  }
+
+  .oddProjectContainer {
+    .hoverProjectArrow {
+      left: 180px;
+    }
+  }
+
+  .evenProjectContainer {
+    .hoverProjectArrow {
+      right: 180px;
+    }
+  }
+
+  .projectImg {
+    width: 280px;
+    height: 180px;
+
+    .hoverProjectImg {
+      width: 280px;
+      height: 180px;
+    }
+
+    .hoverProject {
+      width: 280px;
+      height: 180px;
+    }
+
+    .hoverProjectArrow {
+      top: 160px;
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  .oddProjectContainer.hoverState .hoverProject {
+    transform: translate(8px, 8px);
+  }
+
+  .oddProjectContainer.hoverState .hoverProjectArrow {
+    transform: translate(8px, 8px) rotate(180deg);
+    width: 40px;
+    height: 40px;
+  }
+
+  .evenProjectContainer.hoverState .hoverProject {
+    transform: translate(-8px, 8px);
+  }
+
+  .evenProjectContainer.hoverState .hoverProjectArrow {
+    transform: translate(-8px, 8px) rotate(90deg);
+    width: 40px;
+    height: 40px;
+  }
+}

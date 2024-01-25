@@ -163,3 +163,32 @@
     }
   }
 }
+
+@media screen and (max-width: 479px) {
+  .aboutContainerTop {
+    gap: 24px;
+  }
+
+  .aboutText {
+    p {
+      width: 260px;
+    }
+  }
+
+  .aboutImg {
+    .profileImage {
+      width: 270px;
+      height: 270px;
+      img {
+        width: 270px;
+        height: 270px;
+      }
+    }
+  }
+  .aboutContainerBottom {
+    img {
+      margin-top: 0;
+      margin-right: 48px;
+    }
+  }
+}

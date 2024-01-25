@@ -129,7 +129,7 @@ footer {
 
 @media screen and (max-width: 599px) {
   footer {
-    padding: 16px calc((100vw - 400px) / 2) 32px calc((100vw - 400px) / 2);
+    padding: 32px calc((100vw - 400px) / 2);
   }
 
   .footerContent {
@@ -148,5 +148,11 @@ footer {
       align-items: center;
       height: 200px;
     }
+  }
+}
+
+@media screen and (max-width: 479px) {
+  footer {
+    padding: 32px calc((100vw - 300px) / 2);
   }
 }

@@ -60,3 +60,11 @@
     margin-bottom: 32px;
   }
 }
+
+@media screen and (max-width: 479px) {
+  .portfolioHeading {
+    span {
+      width: 280px;
+    }
+  }
+}
