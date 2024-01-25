@@ -40,6 +40,11 @@
     }
   }
 
+  a {
+    margin-top: 64px;
+    display: none;
+  }
+
   @keyframes slideInHeading {
     from {
       transform: translateY(-100px);
@@ -131,6 +136,21 @@
   .underline {
     svg {
       width: 320px;
+    }
+  }
+}
+
+@media screen and (max-width: 959px) {
+  .atfContainer {
+    .atfContainerTop {
+      .heading {
+        h1 {
+          font-size: 80px;
+        }
+      }
+      a {
+        display: block;
+      }
     }
   }
 }

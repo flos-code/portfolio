@@ -99,3 +99,11 @@
     }
   }
 }
+
+@media screen and (max-width: 959px) {
+  .privacyPolicyContainer {
+    mat-icon {
+      right: calc((100vw - 700px) / 2 + 40px);
+    }
+  }
+}

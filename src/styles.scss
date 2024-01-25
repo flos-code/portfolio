@@ -417,3 +417,9 @@ body {
     }
   }
 }
+
+@media screen and (max-width: 959px) {
+  section {
+    padding: 0 calc((100vw - 700px) / 2);
+  }
+}

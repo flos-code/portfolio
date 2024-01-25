@@ -25,9 +25,15 @@
 .projectsArrow {
   display: flex;
   justify-content: flex-end;
-  cursor: pointer;
   img {
     margin-top: 48px;
     margin-right: 120px;
+  }
+}
+
+@media screen and (max-width: 959px) {
+  .singleProject {
+    display: flex;
+    justify-content: center;
   }
 }
