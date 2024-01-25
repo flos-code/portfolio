@@ -37,6 +37,7 @@
       font-weight: 700;
       letter-spacing: -1.2px;
       margin: 0 8px;
+      line-height: 48px;
     }
   }
 
@@ -150,6 +151,30 @@
       }
       a {
         display: block;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 839px) {
+  .atfContainer {
+    .atfContainerTop {
+      .heading {
+        h1 {
+          font-size: 64px;
+          margin-top: -28px;
+        }
+      }
+    }
+
+    .underline {
+      svg {
+        width: 240px;
+      }
+
+      span {
+        font-size: 32px;
+        line-height: 32px;
       }
     }
   }

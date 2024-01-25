@@ -431,3 +431,52 @@
     transform: translate(-20px, 20px) rotate(90deg);
   }
 }
+
+@media screen and (max-width: 839px) {
+  .projectContainer {
+    width: 480px;
+  }
+
+  .oddProjectContainer {
+    .hoverProjectArrow {
+      left: 400px;
+    }
+  }
+
+  .evenProjectContainer {
+    .hoverProjectArrow {
+      right: 400px;
+    }
+  }
+
+  .projectImg {
+    width: 480px;
+    height: 310px;
+
+    .hoverProjectImg {
+      width: 480px;
+      height: 310px;
+    }
+
+    .hoverProject {
+      width: 480px;
+      height: 310px;
+    }
+
+    .hoverProjectArrow {
+      top: 280px;
+      width: 32px;
+      height: 32px;
+    }
+  }
+
+  .oddProjectContainer.hoverState .hoverProjectArrow {
+    width: 56px;
+    height: 56px;
+  }
+
+  .evenProjectContainer.hoverState .hoverProjectArrow {
+    width: 56px;
+    height: 56px;
+  }
+}

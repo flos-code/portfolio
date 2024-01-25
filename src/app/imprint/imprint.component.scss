@@ -86,3 +86,11 @@
     }
   }
 }
+
+@media screen and (max-width: 839px) {
+  .imprintContainer {
+    mat-icon {
+      right: calc((100vw - 500px) / 2 + 40px);
+    }
+  }
+}

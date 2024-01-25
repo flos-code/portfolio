@@ -333,3 +333,51 @@ header {
     padding: 0 calc((100vw - 700px) / 2);
   }
 }
+
+@media screen and (max-width: 839px) {
+  header {
+    padding: 32px calc((100vw - 500px) / 2);
+  }
+
+  .menuBottom {
+  }
+
+  .menuLinks {
+    a {
+      font-size: 64px;
+      width: 480px;
+      height: 90px;
+
+      &::before {
+        width: 24px;
+        height: 24px;
+        left: 24px;
+        bottom: 12px;
+      }
+
+      &:hover::before {
+        width: 180px;
+        left: 240px;
+      }
+
+      &:active::before {
+        width: calc(480px - 48px);
+        height: calc(90px - 24px);
+        left: 24px;
+      }
+    }
+  }
+
+  .menuBottom {
+    padding: 0 calc((100vw - 500px) / 2) 32px calc((100vw - 500px) / 2);
+    flex-direction: column;
+
+    .menuBottomLeft {
+      align-self: flex-start;
+    }
+
+    .menuBottomRight {
+      align-self: flex-end;
+    }
+  }
+}

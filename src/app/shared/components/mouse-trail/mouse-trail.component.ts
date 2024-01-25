@@ -28,13 +28,6 @@ export class MouseTrailComponent implements OnInit, OnDestroy {
 
   constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
 
-  // ngOnInit() {
-  //   this.subscription = fromEvent(document, 'mousemove').subscribe((e: any) => {
-  //     this.coordinates = { x: e.clientX, y: e.clientY };
-  //     console.log('coordinates: ', this.coordinates);
-  //   });
-  // }
-
   ngOnInit() {
     if (isPlatformBrowser(this.platformId)) {
       this.subscription = fromEvent(document, 'mousemove')

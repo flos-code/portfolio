@@ -37,3 +37,11 @@
     justify-content: center;
   }
 }
+
+@media screen and (max-width: 839px) {
+  .portfolioHeading {
+    span {
+      width: 480px;
+    }
+  }
+}
