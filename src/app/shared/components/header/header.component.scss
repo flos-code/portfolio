@@ -22,10 +22,28 @@ header {
     }
   }
 
-  .openMenu {
-    width: 40px;
-    height: 40px;
-    cursor: pointer;
+  .headerRight {
+    display: flex;
+    gap: 24px;
+    .languageSelector {
+      width: 40px;
+      height: 40px;
+      text-align: center;
+
+      mat-icon {
+        font-size: 40px;
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    }
+    .openMenu {
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+    }
   }
 }
 

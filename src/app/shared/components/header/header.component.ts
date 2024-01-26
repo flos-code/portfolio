@@ -2,11 +2,13 @@ import { CommonModule } from '@angular/common';
 import { Component, ElementRef, ViewChild } from '@angular/core';
 
 import { MatIconModule } from '@angular/material/icon';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [MatIconModule, CommonModule],
+  imports: [CommonModule, MatButtonModule, MatMenuModule, MatIconModule],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })
@@ -119,5 +121,13 @@ export class HeaderComponent {
 
       iteration += 1 / 5;
     }, 30) as unknown as number;
+  }
+
+  selectEnglish() {
+    console.log('english');
+  }
+
+  selectGerman() {
+    console.log('deutsch');
   }
 }

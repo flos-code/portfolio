@@ -347,6 +347,28 @@ body {
   line-height: 120%; /* 16.8px */
 }
 
+.mat-mdc-menu-content {
+  background-color: $secondaryColor;
+}
+
+.mat-mdc-menu-content .mat-mdc-menu-item .mat-mdc-menu-item-text {
+  font-family: "Overpass" !important;
+  font-weight: 400 !important;
+}
+
+.mat-mdc-menu-item:not([disabled]):hover {
+  background-color: #bfecda !important;
+}
+
+.mat-mdc-icon-button {
+  --mdc-icon-button-disabled-icon-color: rgba(0, 0, 0, 0) !important;
+  --mat-icon-button-state-layer-color: #00bc8f !important;
+  --mat-icon-button-ripple-color: rgba(0, 0, 0, 0) !important;
+  --mat-icon-button-hover-state-layer-opacity: 0.1 !important;
+  --mat-icon-button-focus-state-layer-opacity: 0.2 !important;
+  --mat-icon-button-pressed-state-layer-opacity: 0.3 !important;
+}
+
 //Scrollbar
 
 /* For Webkit browsers like Chrome, Safari */

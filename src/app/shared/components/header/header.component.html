@@ -1,12 +1,24 @@
 <header>
   <a href=""> <div class="logo" #logo data-value="<sf>">&#60;sf&#62;</div></a>
-
-  <img
-    class="openMenu"
-    src="{{ menuAnimation[currentBurgerIndex] }}"
-    alt="Menu"
-    (click)="toggleMenu()"
-  />
+  <div class="headerRight">
+    <button class="languageSelector" mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon>language</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="selectEnglish()">
+        <span>English</span>
+      </button>
+      <button mat-menu-item (click)="selectGerman()">
+        <span>Deutsch</span>
+      </button>
+    </mat-menu>
+    <img
+      class="openMenu"
+      src="{{ menuAnimation[currentBurgerIndex] }}"
+      alt="Menu"
+      (click)="toggleMenu()"
+    />
+  </div>
 </header>
 <div class="menu" [class.visible]="showMenu">
   <div class="menuLinks">
