@@ -7,6 +7,7 @@ import { MouseTrailComponent } from './shared/components/mouse-trail/mouse-trail
 import { MainContentComponent } from './main-content/main-content.component';
 import { ImprintComponent } from './imprint/imprint.component';
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
+import { LanguageService } from './language.service';
 
 @Component({
   selector: 'app-root',
@@ -25,5 +26,8 @@ import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.componen
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
+  constructor(private languageService: LanguageService) {
+    this.languageService.initializeLanguage();
+  }
   title = 'portfolio';
 }

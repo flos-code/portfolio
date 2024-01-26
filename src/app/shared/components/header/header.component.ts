@@ -5,6 +5,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
 
+import { LanguageService } from './../../../language.service';
+
 @Component({
   selector: 'app-header',
   standalone: true,
@@ -13,6 +15,7 @@ import { MatButtonModule } from '@angular/material/button';
   styleUrl: './header.component.scss',
 })
 export class HeaderComponent {
+  constructor(private languageService: LanguageService) {}
   showMenu: boolean = false;
   showCopyMessage: boolean = false;
   currentBurgerIndex: number = 0;
@@ -123,11 +126,7 @@ export class HeaderComponent {
     }, 30) as unknown as number;
   }
 
-  selectEnglish() {
-    console.log('english');
-  }
-
-  selectGerman() {
-    console.log('deutsch');
+  switchLanguage(language: string): void {
+    this.languageService.setLanguage(language);
   }
 }

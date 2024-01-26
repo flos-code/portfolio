@@ -1,14 +1,17 @@
 import { CommonModule } from '@angular/common';
 import { Component, HostListener } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-about',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, TranslateModule],
   templateUrl: './about.component.html',
   styleUrl: './about.component.scss',
 })
 export class AboutComponent {
+  constructor(public translate: TranslateService) {}
   isSectionVisible: boolean = false;
   hoveredArrow: boolean = false;
   hoveredArrowDelay: boolean = false;
