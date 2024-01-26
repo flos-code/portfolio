@@ -1,11 +1,11 @@
 <section class="contactContainer">
-  <h2>Say Hi!</h2>
+  <h2>{{ "Say Hi!" | translate }}</h2>
   <div class="contactFormHeading">
-    <h3>Have a project in mind?</h3>
-    <span
-      >I'd love to hear about it. Contact me, and let's make it happen
-      together!</span
-    >
+    <h3>{{ "Have a project in mind?" | translate }}</h3>
+    <span>{{
+      "I'd love to hear about it. Contact me, and let's make it happen together!"
+        | translate
+    }}</span>
   </div>
   <form class="contactForm" #contactForm (submit)="sendMail()">
     <mat-form-field
@@ -13,7 +13,7 @@
       class="contactInput"
       [class.has-content]="nameField.value"
     >
-      <mat-label>Your name*</mat-label>
+      <mat-label>{{ "Your name*" | translate }}</mat-label>
       <input
         matInput
         name="name"
@@ -22,12 +22,12 @@
         #nameFieldModel="ngModel"
         required
       />
-      <mat-hint *ngIf="nameField.value && !isNameValid(nameField.value)"
-        >Please enter a valid name</mat-hint
-      >
-      <mat-hint *ngIf="nameFieldModel.touched && !inputName"
-        >Your name is required</mat-hint
-      >
+      <mat-hint *ngIf="nameField.value && !isNameValid(nameField.value)">{{
+        "Please enter a valid name" | translate
+      }}</mat-hint>
+      <mat-hint *ngIf="nameFieldModel.touched && !inputName">{{
+        "Your name is required" | translate
+      }}</mat-hint>
       <mat-icon
         [ngStyle]="{ color: '#70E61C' }"
         matSuffix
@@ -54,7 +54,7 @@
       class="contactInput"
       [class.has-content]="emailField.value"
     >
-      <mat-label>Your email*</mat-label>
+      <mat-label>{{ "Your email*" | translate }}</mat-label>
       <input
         matInput
         name="email"
@@ -64,12 +64,12 @@
         required
       />
 
-      <mat-hint *ngIf="emailField.value && !isEmailValid(emailField.value)"
-        >Please enter a valid email</mat-hint
-      >
-      <mat-hint *ngIf="emailFieldModel.touched && !inputEmail"
-        >Your email is required</mat-hint
-      >
+      <mat-hint *ngIf="emailField.value && !isEmailValid(emailField.value)">{{
+        "Please enter a valid email" | translate
+      }}</mat-hint>
+      <mat-hint *ngIf="emailFieldModel.touched && !inputEmail">{{
+        "Your email is required" | translate
+      }}</mat-hint>
       <mat-icon
         [ngStyle]="{ color: '#70E61C' }"
         matSuffix
@@ -92,7 +92,7 @@
       class="contactTextarea"
       [class.has-content]="messageField.value"
     >
-      <mat-label>Your message*</mat-label>
+      <mat-label>{{ "Your message*" | translate }}</mat-label>
       <textarea
         type="text"
         matInput
@@ -103,9 +103,9 @@
         name="message"
         required
       ></textarea>
-      <mat-hint *ngIf="messageFieldModel.touched && !inputMessage"
-        >A message is required</mat-hint
-      >
+      <mat-hint *ngIf="messageFieldModel.touched && !inputMessage">{{
+        "A message is required" | translate
+      }}</mat-hint>
       <mat-icon
         [ngStyle]="{ color: '#70E61C' }"
         matSuffix
@@ -125,11 +125,11 @@
       name="privacyPolicy"
       required
     >
-      I've read the
-      <a [class.privacyPolicyLink]="privacyPolicyChecked" href="privacy-policy"
-        >privacy policy</a
+      {{ "I've read the" | translate }}
+      <a [class.privacyPolicyLink]="privacyPolicyChecked" href="privacy-policy">
+        {{ "privacy policy" | translate }}</a
       >
-      and agree to the processing of my data as outlined.
+      {{ "and agree to the processing of my data as outlined." | translate }}
     </mat-checkbox>
     <button
       #sendButton
@@ -144,7 +144,7 @@
         !isEmailValid(inputEmail)
       "
     >
-      Send message
+      {{ "Send message" | translate }}
     </button>
   </form>
   <a class="arrowUp" href="#"><img src="/assets/img/arrow_up.png" alt="" /></a>

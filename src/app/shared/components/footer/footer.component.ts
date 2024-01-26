@@ -1,14 +1,17 @@
 import { CommonModule } from '@angular/common';
 import { Component, ElementRef, ViewChild } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-footer',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, TranslateModule],
   templateUrl: './footer.component.html',
   styleUrl: './footer.component.scss',
 })
 export class FooterComponent {
+  constructor(public translate: TranslateService) {}
   letters: string = 'abcdefghijklmnopqrstuvwxyz1234567890<>$%&/()}{!?';
   interval: number | undefined;
   @ViewChild('logo') logoElement!: ElementRef;

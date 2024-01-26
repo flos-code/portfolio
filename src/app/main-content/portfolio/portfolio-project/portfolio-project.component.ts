@@ -1,14 +1,17 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input, HostListener } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-portfolio-project',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, TranslateModule],
   templateUrl: './portfolio-project.component.html',
   styleUrl: './portfolio-project.component.scss',
 })
 export class PortfolioProjectComponent {
+  constructor(public translate: TranslateService) {}
   isSectionOddVisible: boolean = false;
   isSectionEvenVisible: boolean = false;
   @Input() project: any; // existing input

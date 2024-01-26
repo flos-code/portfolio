@@ -1,15 +1,18 @@
 import { Component } from '@angular/core';
 import { PortfolioProjectComponent } from './portfolio-project/portfolio-project.component';
 import { CommonModule } from '@angular/common';
+import { TranslateService } from '@ngx-translate/core';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-portfolio',
   standalone: true,
-  imports: [PortfolioProjectComponent, CommonModule],
+  imports: [PortfolioProjectComponent, CommonModule, TranslateModule],
   templateUrl: './portfolio.component.html',
   styleUrl: './portfolio.component.scss',
 })
 export class PortfolioComponent {
+  constructor(public translate: TranslateService) {}
   hoveredArrow: boolean = false;
   hoveredArrowDelay: boolean = false;
 
@@ -24,8 +27,8 @@ export class PortfolioComponent {
       name: 'Join',
       imgPath: '/assets/img/project_join.jpg',
       usedTools: ['HTML', 'CSS', 'JS'],
-      description:
-        'Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories. ',
+      descriptionKey: 'projectDescriptionJoin',
+
       liveLink: 'https://www.google.com/',
       githubLink: 'https://github.com/flos-code/Join',
     },
@@ -33,19 +36,10 @@ export class PortfolioComponent {
       name: 'Sharkie',
       imgPath: '/assets/img/project_sharkie.jpg',
       usedTools: ['HTML', 'CSS', 'JS'],
-      description:
-        'A simple Jump-and-Run game based on an object-oriented approach. Help sharkie to find coins and poison bottles to fight against the killer whale.',
+      descriptionKey: 'projectDescriptionSharkie',
       liveLink: 'https://www.google.com/',
       githubLink: 'https://github.com/flos-code/Sharkie',
     },
-    // {
-    //   name: 'DaBubble',
-    //   imgPath: '/assets/img/portfolio photos s3.png',
-    //   usedTools: ['HTML', 'CSS', 'JS'],
-    //   description: 'testtd',
-    //   liveLink: 'https://www.google.com/',
-    //   githubLink: 'https://www.google.com/',
-    // },
   ];
   hoveredProjectIndex: number | null = null;
   onMouseEnter(index: number): void {

@@ -7,15 +7,27 @@ import { MatButtonModule } from '@angular/material/button';
 
 import { LanguageService } from './../../../language.service';
 
+import { TranslateService } from '@ngx-translate/core';
+import { TranslateModule } from '@ngx-translate/core';
+
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule, MatButtonModule, MatMenuModule, MatIconModule],
+  imports: [
+    CommonModule,
+    MatButtonModule,
+    MatMenuModule,
+    MatIconModule,
+    TranslateModule,
+  ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })
 export class HeaderComponent {
-  constructor(private languageService: LanguageService) {}
+  constructor(
+    private languageService: LanguageService,
+    public translate: TranslateService
+  ) {}
   showMenu: boolean = false;
   showCopyMessage: boolean = false;
   currentBurgerIndex: number = 0;

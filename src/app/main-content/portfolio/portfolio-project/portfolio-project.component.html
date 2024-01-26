@@ -30,7 +30,7 @@
     <div class="projectText">
       <h3>{{ project.name }}</h3>
       <span class="usedTools">{{ project.usedTools.join(" | ") }}</span>
-      <span class="description">{{ project.description }}</span>
+      <span class="description">{{ project.descriptionKey | translate }}</span>
       <div class="projectLinks">
         <a href="{{ project.liveLink }}" target="_blank"
           ><button class="mainButton">Live</button></a

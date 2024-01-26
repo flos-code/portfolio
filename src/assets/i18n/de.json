@@ -4,5 +4,39 @@
   "Down": "Scrollen",
   "Send a message": "Kontakt aufnehmen",
 
-  "About me": "Über Mich"
+  "About me": "Über Mich",
+  "Hey, I'm Florian based near Stuttgart, Germany. With a background in mechanical engineering, I've transitioned to front-end web development. Thanks to my combined expertise in engineering and programming, I can help you to turn your concepts into efficient and user-friendly web solutions.": "Hallo, ich bin Florian und komme aus der Nähe von Stuttgart. Vor meiner Karriere in der Frontend-Webentwicklung war ich als Ingenieur im Maschinenbau tätig. Dank des dort gesammelten Wissens und meinen Programmierkenntnissen kann ich Sie dabei unterstützen, Ihr nächstes Frontend-Projekt in die Tat umzusetzen.",
+  "Feel free to contact me for your next development needs.": "Gerne könne Sie mich kontaktieren wenn ich Sie bei Ihren Proekt unterstützen soll.",
+  "Let's talk": "Kontakt aufnehmen",
+
+  "My Skills": "Skills",
+
+  "Feel free to explore my recent projects and check out their source code.": "Schauen Sie sich gerne einig meiner Projekte samt Quellcode an.",
+  "projectDescriptionJoin": "Aufgabenmanager, inspiriert vom Kanban-System. Erstellen und organisieren Sie Aufgaben mithilfe von Drag-and-Drop-Funktionen, weisen Sie Benutzer und Kategorien zu.",
+  "projectDescriptionSharkie": "Ein einfaches Jump-and-Run-Spiel, das auf einem objektorientierten Ansatz basiert. Hilf Sharkie, Münzen und Giftflaschen zu finden, um gegen den Killerwal zu kämpfen.",
+
+  "Say Hi!": "Hallo!",
+  "Have a project in mind?": "Benötigen Sie unterstützun bei Ihrem Projekt",
+  "I'd love to hear about it. Contact me, and let's make it happen together!": "Gerene könne Sie mich kontaktieren und wir suchen gemeinsam nach einer Lösung!",
+
+  "Your name*": "Name*",
+  "Your name is required": "Ihr Name ist erforderlich",
+  "Please enter a valid name": "Bitte geben Sie einen gültigen Namen ein",
+  "Your email*": "Email*",
+  "Your email is required": "Ihre Email ist erforderlich",
+  "Please enter a valid email": "Bitte geben Sie eine gültige Email ein",
+  "Your message*": "Nachricht*",
+  "A message is required": "Eine Nachricht ist erforderlich",
+
+  "I've read the": "Ich habe die",
+  "privacy policy": "Datenschutzbestimmungen",
+  "and agree to the processing of my data as outlined.": "gelesen und stimme der Verarbeitung meiner Daten wie beschrieben zu.",
+  "Send message": "Nachricht senden",
+
+  "Legal Notice": "Impressum",
+  "Email copied to clipboard!": "Email wurde in die Zwischenablage kopiert!",
+  "Privacy Policy": "Datenschutz",
+
+  "Imprint_H1": "Angaben gemäß § 5 TMG",
+  "Imprint_H2": "Kontakt"
 }
