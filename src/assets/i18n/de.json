@@ -38,5 +38,29 @@
   "Privacy Policy": "Datenschutz",
 
   "Imprint_H1": "Angaben gemäß § 5 TMG",
-  "Imprint_H2": "Kontakt"
+  "Imprint_H2": "Kontakt",
+
+  "PP_Title": "Datenschutz­erklärung",
+
+  "PP_Section1_H2": "1. Datenschutz auf einen Blick",
+  "PP_Section1_H3_01": "Allgemeine Hinweise",
+  "PP_Section1_P_01": "Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie diese Website besuchen. Personenbezogene Daten sind alle Daten, mit denen Sie persönlich identifiziert werden können. Ausführliche Informationen zum Thema Datenschutz entnehmen Sie unserer unter diesem Text aufgeführten Datenschutzerklärung.",
+  "PP_Section1_H3_02": "Datenerfassung auf dieser Website",
+  "PP_Section1_H4_01": "Wer ist verantwortlich für die Datenerfassung auf dieser Website?",
+  "PP_Section1_P_02": "Die Datenverarbeitung auf dieser Website erfolgt durch den Websitebetreiber. Dessen Kontaktdaten können Sie dem Abschnitt „Hinweis zur Verantwortlichen Stelle“ in dieser Datenschutzerklärung entnehmen.",
+  "PP_Section1_H4_02": "Wie erfassen wir Ihre Daten?",
+  "PP_Section1_P_03": "Ihre Daten werden zum einen dadurch erhoben, dass Sie uns diese mitteilen. Hierbei kann es sich z. B. um Daten handeln, die Sie in ein Kontaktformular eingeben.",
+  "PP_Section1_P_04": "Andere Daten werden automatisch oder nach Ihrer Einwilligung beim Besuch der Website durch unsere IT-Systeme erfasst. Das sind vor allem technische Daten (z. B. Internetbrowser, Betriebssystem oder Uhrzeit des Seitenaufrufs). Die Erfassung dieser Daten erfolgt automatisch, sobald Sie diese Website betreten.",
+  "PP_Section1_H4_03": "Wofür nutzen wir Ihre Daten?",
+  "PP_Section1_P_05": "Ein Teil der Daten wird erhoben, um eine fehlerfreie Bereitstellung der Website zu gewährleisten. Andere Daten können zur Analyse Ihres Nutzerverhaltens verwendet werden.",
+  "PP_Section1_H4_04": "Welche Rechte haben Sie bezüglich Ihrer Daten?",
+  "PP_Section1_P_06": "Sie haben jederzeit das Recht, unentgeltlich Auskunft über Herkunft, Empfänger und Zweck Ihrer gespeicherten personenbezogenen Daten zu erhalten. Sie haben außerdem ein Recht, die Berichtigung oder Löschung dieser Daten zu verlangen. Wenn Sie eine Einwilligung zur Datenverarbeitung erteilt haben, können Sie diese Einwilligung jederzeit für die Zukunft widerrufen. Außerdem haben Sie das Recht, unter bestimmten Umständen die Einschränkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen. Des Weiteren steht Ihnen ein Beschwerderecht bei der zuständigen Aufsichtsbehörde zu.",
+  "PP_Section1_P_07": "Hierzu sowie zu weiteren Fragen zum Thema Datenschutz können Sie sich jederzeit an uns wenden.",
+
+  "PP_Section2_H2": "2. Hosting",
+  "PP_Section2_P_01": "Wir hosten die Inhalte unserer Website bei folgendem Anbieter:",
+  "PP_Section2_H3_01": "All-Inkl",
+  "PP_Section2_P_02": "TAnbieter ist die ALL-INKL.COM - Neue Medien Münnich, Inh. René Münnich, Hauptstraße 68, 02742 Friedersdorf (nachfolgend All-Inkl). Details entnehmen Sie der Datenschutzerklärung von All-Inkl:",
+  "PP_Section2_A_01": "https://all-inkl.com/datenschutzinformationen/",
+  "PP_Section2_P_03": "Die Verwendung von All-Inkl erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Wir haben ein berechtigtes Interesse an einer möglichst zuverlässigen Darstellung unserer Website. Sofern eine entsprechende Einwilligung abgefragt wurde, erfolgt die Verarbeitung ausschließlich auf Grundlage von Art. 6 Abs. 1 lit. a DSGVO und § 25 Abs. 1 TTDSG, soweit die Einwilligung die Speicherung von Cookies oder den Zugriff auf Informationen im Endgerät des Nutzers (z. B. Device-Fingerprinting) im Sinne des TTDSG umfasst. Die Einwilligung ist jederzeit widerrufbar."
 }

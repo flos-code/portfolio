@@ -37,5 +37,29 @@
   "Privacy Policy": "Privacy Policy",
 
   "Imprint_H1": "Information pursuant to Sect. 5 German Telemedia Act (TMG)",
-  "Imprint_H2": "Contact"
+  "Imprint_H2": "Contact",
+
+  "PP_Title": "Privacy Policy",
+
+  "PP_Section1_H2": "1. An overview of data protection",
+  "PP_Section1_H3_01": "General information",
+  "PP_Section1_P_01": "The following information will provide you with an easy to navigate overview of what will happen with your personal data when you visit this website. The term “personal data” comprises all data that can be used to personally identify you. For detailed information about the subject matter of data protection, please consult our Data Protection Declaration, which we have included beneath this copy.",
+  "PP_Section1_H3_02": "Data recording on this website",
+  "PP_Section1_H4_01": "Who is the responsible party for the recording of data on this website (i.e., the “controller”)?",
+  "PP_Section1_P_02": "The data on this website is processed by the operator of the website, whose contact information is available under section “Information about the responsible party (referred to as the “controller” in the GDPR)” in this Privacy Policy.",
+  "PP_Section1_H4_02": "How do we record your data?",
+  "PP_Section1_P_03": "We collect your data as a result of your sharing of your data with us. This may, for instance be information you enter into our contact form.",
+  "PP_Section1_P_04": "Other data shall be recorded by our IT systems automatically or after you consent to its recording during your website visit. This data comprises primarily technical information (e.g., web browser, operating system, or time the site was accessed). This information is recorded automatically when you access this website.",
+  "PP_Section1_H4_03": "What are the purposes we use your data for?",
+  "PP_Section1_P_05": "A portion of the information is generated to guarantee the error free provision of the website. Other data may be used to analyze your user patterns.",
+  "PP_Section1_H4_04": "What rights do you have as far as your information is concerned?",
+  "PP_Section1_P_06": "You have the right to receive information about the source, recipients, and purposes of your archived personal data at any time without having to pay a fee for such disclosures. You also have the right to demand that your data are rectified or eradicated. If you have consented to data processing, you have the option to revoke this consent at any time, which shall affect all future data processing. Moreover, you have the right to demand that the processing of your data be restricted under certain circumstances. Furthermore, you have the right to log a complaint with the competent supervising agency.",
+  "PP_Section1_P_07": "Please do not hesitate to contact us at any time if you have questions about this or any other data protection related issues.",
+
+  "PP_Section2_H2": "2. Hosting",
+  "PP_Section2_P_01": "We are hosting the content of our website at the following provider:",
+  "PP_Section2_H3_01": "All-Inkl",
+  "PP_Section2_P_02": "The Provider is the ALL-INKL.COM – Neue Medien Münnich, owner: René Münnich, Hauptstraße 68, 02742 Friedersdorf, Germany (hereinafter “All-Inkl”). For details, please visit the privacy policy of All-Inkl:",
+  "PP_Section2_A_01": "https://all-inkl.com/datenschutzinformationen/",
+  "PP_Section2_P_03": "The use of All-Inkl is based on Art. 6(1)(f) GDPR. We have a legitimate interest in the most reliable representation of our website. If appropriate consent has been obtained, the processing is carried out exclusively on the basis of Art. 6(1)(a) GDPR and § 25 (1) TTDSG, insofar the consent includes the storage of cookies or the access to information in the user’s end device (e.g., device fingerprinting) within the meaning of the TTDSG. This consent can be revoked at any time."
 }
