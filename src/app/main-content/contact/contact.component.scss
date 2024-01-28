@@ -1,10 +1,7 @@
 @import "../../../styles.scss";
 
 .contactContainer {
-  // background-color: lightgray;
-
   background-color: $primaryColor;
-  // clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 100%);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -16,9 +13,9 @@
     top: 0;
     left: 0;
     right: 0;
-    height: 200px; // Adjust the height as needed
+    height: 200px;
     background-color: $primaryColor;
-    transform: skewY(4deg); // Adjust the angle as needed
+    transform: skewY(4deg);
     transform-origin: top right;
     z-index: -1;
   }
@@ -70,7 +67,7 @@
     color: $secondaryColor;
     font-family: "Overpass";
     font-size: 16px;
-    line-height: 120%; /* 19.2px */
+    line-height: 120%;
     background-color: $primaryColor;
     padding: 0 4px;
   }
@@ -79,7 +76,7 @@
     color: #e61c40;
     font-family: "Overpass";
     font-size: 16px;
-    line-height: 120%; /* 19.2px */
+    line-height: 120%;
   }
 
   .contactInput {
@@ -95,14 +92,14 @@
     color: $secondaryColor;
     font-family: "Overpass";
     font-size: 16px;
-    line-height: 120%; /* 19.2px */
+    line-height: 120%;
   }
 
   textarea {
     color: $secondaryColor;
     font-family: "Overpass";
     font-size: 16px;
-    line-height: 120%; /* 19.2px */
+    line-height: 120%;
 
     resize: none;
     height: 180px;
@@ -111,14 +108,14 @@
   .mdc-label {
     color: $secondaryColor;
     font-size: 14px;
-    line-height: 120%; /* 16.8px */
+    line-height: 120%;
   }
 
   a {
     text-decoration: none;
     color: $accentColor;
     font-size: 14px;
-    line-height: 120%; /* 16.8px */
+    line-height: 120%;
 
     &:hover {
       font-weight: 700;

@@ -37,7 +37,7 @@
 
     &:hover .hoverProfileImage {
       opacity: 1;
-      transform: translate(20px, 20px); // Default state
+      transform: translate(20px, 20px);
     }
     img {
       position: absolute;
@@ -48,7 +48,7 @@
       top: 0;
       left: 0;
       opacity: 0;
-      transform: translate(0, 0); // Default state
+      transform: translate(0, 0);
       transition: opacity 150ms linear, transform 150ms linear;
     }
   }

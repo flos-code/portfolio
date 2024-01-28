@@ -117,7 +117,6 @@ header {
       width: calc(640px - 32px);
       height: calc(120px - 32px);
       left: 16px;
-      // bottom: 16px;
     }
   }
 }
@@ -136,9 +135,9 @@ header {
     top: 0;
     left: 0;
     right: 0;
-    height: 200px; // Adjust the height as needed
+    height: 200px;
     background-color: $primaryColor;
-    transform: skewY(4deg); // Adjust the angle as needed
+    transform: skewY(4deg);
     transform-origin: top right;
     z-index: -1;
   }
@@ -180,7 +179,7 @@ header {
         span {
           color: $secondaryColor;
           transition: all 150ms ease-in-out;
-          line-height: 120%; /* 27.6px */
+          line-height: 120%;
         }
 
         mat-icon {
@@ -200,11 +199,11 @@ header {
   .copyMessage {
     color: $accentColor;
     margin-top: 10px;
-    opacity: 0; // Start with the message invisible
-    transition: opacity 0.5s ease-in-out; // Smooth transition for the opacity
+    opacity: 0;
+    transition: opacity 500ms ease-in-out;
 
     &.visible {
-      opacity: 1; // Fully visible when class 'visible' is added
+      opacity: 1;
     }
   }
 

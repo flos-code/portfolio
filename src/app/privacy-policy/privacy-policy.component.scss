@@ -51,8 +51,8 @@
   a {
     text-decoration: none;
     color: $accentColor;
-    word-wrap: break-word; /* Older browsers */
-    overflow-wrap: break-word; /* Newer CSS property */
+    word-wrap: break-word;
+    overflow-wrap: break-word;
   }
 
   mat-icon {

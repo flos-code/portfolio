@@ -1,7 +1,6 @@
 @import "../../../../styles.scss";
 
 .projectContainer {
-  // width: 100%;
   display: flex;
   justify-content: space-between;
   opacity: 0;
@@ -39,7 +38,7 @@
     position: absolute;
     top: 0;
     opacity: 0;
-    transform: none; // Default state
+    transform: none;
     transition: opacity 150ms linear, transform 150ms linear;
   }
 
@@ -47,7 +46,7 @@
     top: 160px;
     width: 48px;
     height: 48px;
-    transform: rotate(135deg); // Default state
+    transform: rotate(135deg);
   }
 }
 
@@ -62,7 +61,7 @@
     display: flex;
     font-size: 48px;
     font-weight: 700;
-    line-height: 120%; /* 57.6px */
+    line-height: 120%;
   }
 }
 
@@ -81,12 +80,12 @@
 
   .usedTools {
     color: $accentColor;
-    line-height: 120%; /* 27.6px */
+    line-height: 120%;
   }
 
   .description {
     font-size: 16px;
-    line-height: 120%; /* 19.2px */
+    line-height: 120%;
   }
 
   .projectLinks {
@@ -120,8 +119,6 @@
   opacity: 1;
   transform: translateX(0);
 }
-
-// Hover state classes for even projects
 
 .evenProjectContainer.hoverState .hoverProject {
   opacity: 1;
