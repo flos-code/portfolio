@@ -17,8 +17,10 @@ export class FooterComponent {
   @ViewChild('logo') logoElement!: ElementRef;
 
   ngAfterViewInit(): void {
-    const logo = this.logoElement.nativeElement;
-    logo.onmouseover = (event: MouseEvent) => this.randomizeLetters(event);
+    if (!('ontouchstart' in window || navigator.maxTouchPoints > 0)) {
+      const logo = this.logoElement.nativeElement;
+      logo.onmouseover = (event: MouseEvent) => this.randomizeLetters(event);
+    }
   }
 
   randomizeLetters(event: MouseEvent): void {

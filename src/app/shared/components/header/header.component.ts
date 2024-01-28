@@ -1,5 +1,11 @@
 import { CommonModule } from '@angular/common';
-import { Component, ElementRef, Inject, ViewChild } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  Inject,
+  PLATFORM_ID,
+  ViewChild,
+} from '@angular/core';
 
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
@@ -98,8 +104,10 @@ export class HeaderComponent {
   }
 
   ngAfterViewInit(): void {
-    const logo = this.logoElement.nativeElement;
-    logo.onmouseover = (event: MouseEvent) => this.randomizeLetters(event);
+    if (!('ontouchstart' in window || navigator.maxTouchPoints > 0)) {
+      const logo = this.logoElement.nativeElement;
+      logo.onmouseover = (event: MouseEvent) => this.randomizeLetters(event);
+    }
   }
 
   randomizeLetters(event: MouseEvent): void {
