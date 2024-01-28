@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 import {
   Component,
   ElementRef,
@@ -32,7 +32,8 @@ import { TranslateModule } from '@ngx-translate/core';
 export class HeaderComponent {
   constructor(
     private languageService: LanguageService,
-    public translate: TranslateService
+    public translate: TranslateService,
+    @Inject(PLATFORM_ID) private platformId: Object
   ) {}
   showMenu: boolean = false;
   showCopyMessage: boolean = false;
@@ -104,9 +105,11 @@ export class HeaderComponent {
   }
 
   ngAfterViewInit(): void {
-    if (!('ontouchstart' in window || navigator.maxTouchPoints > 0)) {
-      const logo = this.logoElement.nativeElement;
-      logo.onmouseover = (event: MouseEvent) => this.randomizeLetters(event);
+    if (isPlatformBrowser(this.platformId)) {
+      if (!('ontouchstart' in window || navigator.maxTouchPoints > 0)) {
+        const logo = this.logoElement.nativeElement;
+        logo.onmouseover = (event: MouseEvent) => this.randomizeLetters(event);
+      }
     }
   }
 

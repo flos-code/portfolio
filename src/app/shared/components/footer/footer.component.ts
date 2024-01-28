@@ -1,5 +1,11 @@
-import { CommonModule } from '@angular/common';
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
+import {
+  Component,
+  ElementRef,
+  Inject,
+  PLATFORM_ID,
+  ViewChild,
+} from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { TranslateModule } from '@ngx-translate/core';
 
@@ -11,15 +17,20 @@ import { TranslateModule } from '@ngx-translate/core';
   styleUrls: ['./footer.component.scss', './footer.component-mediaquery.scss'],
 })
 export class FooterComponent {
-  constructor(public translate: TranslateService) {}
+  constructor(
+    public translate: TranslateService,
+    @Inject(PLATFORM_ID) private platformId: Object
+  ) {}
   letters: string = 'abcdefghijklmnopqrstuvwxyz1234567890<>$%&/()}{!?';
   interval: number | undefined;
   @ViewChild('logo') logoElement!: ElementRef;
 
   ngAfterViewInit(): void {
-    if (!('ontouchstart' in window || navigator.maxTouchPoints > 0)) {
-      const logo = this.logoElement.nativeElement;
-      logo.onmouseover = (event: MouseEvent) => this.randomizeLetters(event);
+    if (isPlatformBrowser(this.platformId)) {
+      if (!('ontouchstart' in window || navigator.maxTouchPoints > 0)) {
+        const logo = this.logoElement.nativeElement;
+        logo.onmouseover = (event: MouseEvent) => this.randomizeLetters(event);
+      }
     }
   }
 
