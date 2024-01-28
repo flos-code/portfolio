@@ -1,4 +1,4 @@
-<section class="skillsContainer">
+<section #skillsContainer class="skillsContainer">
   <h2>{{ "My Skills" | translate }}</h2>
   <div class="skillsImagesBorder">
     <div class="skillsImages">
@@ -13,7 +13,7 @@
       </div>
     </div>
   </div>
-  <div class="skillsArrow" (mouseenter)="hoveredArrow = true">
+  <div #skillsArrow class="skillsArrow">
     <img [src]="getImageSrc()" alt="Arrow" />
   </div>
 </section>

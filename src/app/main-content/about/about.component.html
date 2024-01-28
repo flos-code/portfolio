@@ -1,4 +1,4 @@
-<section class="aboutContainer">
+<section #aboutContainer class="aboutContainer">
   <div class="aboutContainerTop">
     <div class="aboutText" [ngClass]="{ animateAboutText: isSectionVisible }">
       <h2>{{ "About me" | translate }}</h2>
@@ -31,7 +31,7 @@
     </div>
   </div>
 
-  <div class="aboutContainerBottom" (mouseenter)="hoveredArrow = true">
+  <div #aboutContainerBottom class="aboutContainerBottom">
     <img [src]="getImageSrc()" alt="Arrow" />
   </div>
 </section>

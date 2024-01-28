@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, HostListener } from '@angular/core';
+import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { TranslateModule } from '@ngx-translate/core';
 
@@ -17,6 +17,11 @@ export class AboutComponent {
   hoveredArrowDelay: boolean = false;
   hoveredProfileImage: boolean = false;
 
+  @ViewChild('aboutContainer', { static: false })
+  aboutContainer!: ElementRef;
+  @ViewChild('aboutContainerBottom', { static: false })
+  aboutContainerBottom!: ElementRef;
+
   arrowImagesLeft: string[] = [
     '/assets/img/arrow_left_00.png',
     '/assets/img/arrow_left_01.png',
@@ -24,15 +29,25 @@ export class AboutComponent {
   ];
   @HostListener('window:scroll', ['$event'])
   checkScroll() {
-    const section = document.querySelector('.aboutContainer'); // Adjust the selector as needed
+    if (this.aboutContainer) {
+      const bottomElement = this.aboutContainerBottom.nativeElement;
+      const rect = bottomElement.getBoundingClientRect();
 
-    if (section) {
-      const sectionTop = section.getBoundingClientRect().top;
-      const sectionHeight = section.clientHeight;
-      const windowHeight = window.innerHeight;
-
-      if (sectionTop <= windowHeight - sectionHeight / 3) {
+      if (rect.top < window.innerHeight * 1.5 && rect.bottom >= 0) {
         this.isSectionVisible = true;
+      }
+    }
+
+    if (this.aboutContainerBottom) {
+      const bottomElement = this.aboutContainerBottom.nativeElement;
+      const rect = bottomElement.getBoundingClientRect();
+
+      if (rect.top < window.innerHeight * 0.5 && rect.bottom >= 0) {
+        // Element is in view
+        this.hoveredArrow = true;
+      } else {
+        // Element is not in view
+        this.hoveredArrow = false;
       }
     }
   }

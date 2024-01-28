@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 import { PortfolioProjectComponent } from './portfolio-project/portfolio-project.component';
 import { CommonModule } from '@angular/common';
 import { TranslateService } from '@ngx-translate/core';
@@ -15,6 +15,9 @@ export class PortfolioComponent {
   constructor(public translate: TranslateService) {}
   hoveredArrow: boolean = false;
   hoveredArrowDelay: boolean = false;
+
+  @ViewChild('projectsArrow', { static: false })
+  projectsArrow!: ElementRef;
 
   arrowImagesLeft: string[] = [
     '/assets/img/arrow_left_00.png',
@@ -60,6 +63,22 @@ export class PortfolioComponent {
       return this.arrowImagesLeft[2];
     } else {
       return this.arrowImagesLeft[0];
+    }
+  }
+
+  @HostListener('window:scroll', ['$event'])
+  checkScroll() {
+    if (this.projectsArrow) {
+      const bottomElement = this.projectsArrow.nativeElement;
+      const rect = bottomElement.getBoundingClientRect();
+
+      if (rect.top < window.innerHeight * 0.5 && rect.bottom >= 0) {
+        // Element is in view
+        this.hoveredArrow = true;
+      } else {
+        // Element is not in view
+        this.hoveredArrow = false;
+      }
     }
   }
 }
