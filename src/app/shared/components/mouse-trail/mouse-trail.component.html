@@ -1,20 +1,28 @@
-<div
-  class="tail"
-  [style.left.px]="coordinates.x - 10"
-  [style.top.px]="coordinates.y - 10"
+<!-- <div
+  class="tailDefault tail0"
+  [style.left.px]="coordinates0.x - 10"
+  [style.top.px]="coordinates0.y - 10"
 ></div>
 <div
-  class="tail2"
+  class="tailDefault tail1"
+  [style.left.px]="coordinates1.x - 10"
+  [style.top.px]="coordinates1.y - 10"
+></div>
+<div
+  class="tailDefault tail2"
   [style.left.px]="coordinates2.x - 10"
   [style.top.px]="coordinates2.y - 10"
 ></div>
 <div
-  class="tail3"
+  class="tailDefault tail3"
   [style.left.px]="coordinates3.x - 10"
   [style.top.px]="coordinates3.y - 10"
-></div>
+></div> -->
+
 <div
-  class="tail4"
-  [style.left.px]="coordinates4.x - 10"
-  [style.top.px]="coordinates4.y - 10"
+  *ngFor="let coord of coordinates; let i = index"
+  class="tailDefault"
+  [ngClass]="'tail' + i"
+  [style.left.px]="coord.x - 10"
+  [style.top.px]="coord.y - 10"
 ></div>

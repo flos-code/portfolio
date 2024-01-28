@@ -1,74 +1,38 @@
 @import "../../../../styles.scss";
 
-.tail {
+.tailDefault {
   height: 20px;
   width: 20px;
-  background-color: #00bc8f;
   border-radius: 20px;
-
   position: fixed;
   left: 0px;
   top: 0px;
-  z-index: 30;
-
   pointer-events: none;
-  //   opacity: 0;
   transition: opacity 500ms ease;
+}
+
+.tail0 {
+  background-color: #00bc8f;
+  z-index: 30;
+}
+
+.tail1 {
+  background-color: #40cca8;
+  z-index: 29;
 }
 
 .tail2 {
-  height: 20px;
-  width: 20px;
-  background-color: #40cca8;
-  border-radius: 20px;
-
-  position: fixed;
-  left: 0px;
-  top: 0px;
-  z-index: 29;
-
-  pointer-events: none;
-  //   opacity: 0;
-  transition: opacity 500ms ease;
+  background-color: #80dcc1;
+  z-index: 28;
 }
 
 .tail3 {
-  height: 20px;
-  width: 20px;
-  background-color: #80dcc1;
-  border-radius: 20px;
-
-  position: fixed;
-  left: 0px;
-  top: 0px;
-  z-index: 28;
-
-  pointer-events: none;
-  //   opacity: 0;
-  transition: opacity 500ms ease;
-}
-
-.tail4 {
-  height: 20px;
-  width: 20px;
   background-color: #bfecda;
-  border-radius: 20px;
-
-  position: fixed;
-  left: 0px;
-  top: 0px;
   z-index: 27;
-
-  pointer-events: none;
-  //   opacity: 0;
-  transition: opacity 500ms ease;
 }
 
 @media (hover: none) and (pointer: coarse) {
-  .tail,
-  .tail2,
-  .tail3,
-  .tail4 {
+  .tailDefault {
     display: none;
   }
 }
