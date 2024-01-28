@@ -27,7 +27,7 @@ import { TranslateModule } from '@ngx-translate/core';
     TranslateModule,
   ],
   templateUrl: './header.component.html',
-  styleUrl: './header.component.scss',
+  styleUrls: ['./header.component.scss', './header.component-mediaquery.scss'],
 })
 export class HeaderComponent {
   constructor(

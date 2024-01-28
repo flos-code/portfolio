@@ -25,7 +25,10 @@ import { TranslateModule } from '@ngx-translate/core';
     TranslateModule,
   ],
   templateUrl: './contact.component.html',
-  styleUrl: './contact.component.scss',
+  styleUrls: [
+    './contact.component.scss',
+    './contact.component-mediaquery.scss',
+  ],
 })
 export class ContactComponent {
   constructor(public translate: TranslateService) {}

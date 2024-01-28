@@ -8,7 +8,10 @@ import { TranslateModule } from '@ngx-translate/core';
   standalone: true,
   imports: [CommonModule, TranslateModule],
   templateUrl: './above-the-fold.component.html',
-  styleUrl: './above-the-fold.component.scss',
+  styleUrls: [
+    './above-the-fold.component.scss',
+    './above-the-fold.component-mediaquery.scss',
+  ],
 })
 export class AboveTheFoldComponent {
   constructor(public translate: TranslateService) {}

@@ -8,7 +8,7 @@ import { TranslateModule } from '@ngx-translate/core';
   standalone: true,
   imports: [CommonModule, TranslateModule],
   templateUrl: './about.component.html',
-  styleUrl: './about.component.scss',
+  styleUrls: ['./about.component.scss', './about.component-mediaquery.scss'],
 })
 export class AboutComponent {
   constructor(public translate: TranslateService) {}

@@ -9,7 +9,10 @@ import { TranslateModule } from '@ngx-translate/core';
   standalone: true,
   imports: [PortfolioProjectComponent, CommonModule, TranslateModule],
   templateUrl: './portfolio.component.html',
-  styleUrl: './portfolio.component.scss',
+  styleUrls: [
+    './portfolio.component.scss',
+    './portfolio.component-mediaquery.scss',
+  ],
 })
 export class PortfolioComponent {
   constructor(public translate: TranslateService) {}

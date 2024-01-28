@@ -8,7 +8,10 @@ import { TranslateModule } from '@ngx-translate/core';
   standalone: true,
   imports: [MatIconModule, TranslateModule],
   templateUrl: './privacy-policy.component.html',
-  styleUrl: './privacy-policy.component.scss',
+  styleUrls: [
+    './privacy-policy.component.scss',
+    './privacy-policy.component-mediaquery.scss',
+  ],
 })
 export class PrivacyPolicyComponent {
   constructor(public translate: TranslateService) {}

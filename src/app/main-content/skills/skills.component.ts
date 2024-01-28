@@ -8,7 +8,7 @@ import { TranslateModule } from '@ngx-translate/core';
   standalone: true,
   imports: [CommonModule, TranslateModule],
   templateUrl: './skills.component.html',
-  styleUrl: './skills.component.scss',
+  styleUrls: ['./skills.component.scss', './skills.component-mediaquery.scss'],
 })
 export class SkillsComponent {
   constructor(public translate: TranslateService) {}
@@ -85,34 +85,6 @@ export class SkillsComponent {
       return this.arrowImagesLeft[0];
     }
   }
-
-  // @HostListener('window:scroll', ['$event'])
-  // checkScroll() {
-  //   const section = document.querySelector('.skillsContainer'); // Adjust the selector as needed
-
-  //   if (section) {
-  //     const sectionTop = section.getBoundingClientRect().top;
-  //     const sectionHeight = section.clientHeight;
-  //     const windowHeight = window.innerHeight;
-
-  //     if (sectionTop <= windowHeight - sectionHeight / 3) {
-  //       this.isSectionVisible = true;
-  //     }
-  //   }
-
-  //   if (this.aboutContainerBottom) {
-  //     const bottomElement = this.aboutContainerBottom.nativeElement;
-  //     const rect = bottomElement.getBoundingClientRect();
-
-  //     if (rect.top < window.innerHeight * 0.5 && rect.bottom >= 0) {
-  //       // Element is in view
-  //       this.hoveredArrow = true;
-  //     } else {
-  //       // Element is not in view
-  //       this.hoveredArrow = false;
-  //     }
-  //   }
-  // }
 
   @HostListener('window:scroll', ['$event'])
   checkScroll() {

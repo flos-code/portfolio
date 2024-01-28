@@ -1,0 +1,46 @@
+@media screen and (max-width: 839px) {
+  .contactForm {
+    width: 480px;
+  }
+
+  .contactFormHeading {
+    span {
+      width: 480px;
+    }
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .contactForm {
+    width: 360px;
+  }
+
+  .contactFormHeading {
+    span {
+      width: 360px;
+    }
+  }
+
+  .arrowUp {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .contactForm {
+    width: 280px;
+    gap: 24px;
+    textarea {
+      height: 120px;
+    }
+  }
+
+  .contactFormHeading {
+    h3 {
+      font-size: 24px;
+    }
+    span {
+      width: 280px;
+    }
+  }
+}

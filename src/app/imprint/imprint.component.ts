@@ -8,7 +8,10 @@ import { TranslateModule } from '@ngx-translate/core';
   standalone: true,
   imports: [MatIconModule, TranslateModule],
   templateUrl: './imprint.component.html',
-  styleUrl: './imprint.component.scss',
+  styleUrls: [
+    './imprint.component.scss',
+    './imprint.component-mediaquery.scss',
+  ],
 })
 export class ImprintComponent {
   constructor(public translate: TranslateService) {}
