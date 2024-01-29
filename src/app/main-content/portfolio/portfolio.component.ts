@@ -72,14 +72,11 @@ export class PortfolioComponent {
   @HostListener('window:scroll', ['$event'])
   checkScroll() {
     if (this.projectsArrow) {
-      const bottomElement = this.projectsArrow.nativeElement;
-      const rect = bottomElement.getBoundingClientRect();
-
+      let bottomElement = this.projectsArrow.nativeElement;
+      let rect = bottomElement.getBoundingClientRect();
       if (rect.top < window.innerHeight * 0.5 && rect.bottom >= 0) {
-        // Element is in view
         this.hoveredArrow = true;
       } else {
-        // Element is not in view
         this.hoveredArrow = false;
       }
     }

@@ -28,7 +28,7 @@ export class FooterComponent {
   ngAfterViewInit(): void {
     if (isPlatformBrowser(this.platformId)) {
       if (!('ontouchstart' in window || navigator.maxTouchPoints > 0)) {
-        const logo = this.logoElement.nativeElement;
+        let logo = this.logoElement.nativeElement;
         logo.onmouseover = (event: MouseEvent) => this.randomizeLetters(event);
       }
     }
@@ -36,37 +36,40 @@ export class FooterComponent {
 
   randomizeLetters(event: MouseEvent): void {
     let iteration = 0;
-    if (this.interval !== undefined) {
-      clearInterval(this.interval);
-    }
+    this.clearExistingInterval();
 
     this.interval = setInterval(() => {
-      const target = event.target as HTMLElement; // Cast event.target to HTMLElement
-
-      // Check if dataset['value'] is defined
-      const datasetValue = target.dataset['value'];
-      if (!datasetValue) {
-        clearInterval(this.interval);
-        this.interval = undefined;
+      let target = event.target as HTMLElement;
+      let originalText = target.dataset['value'];
+      if (!originalText) {
+        this.clearExistingInterval();
         return;
       }
 
-      target.innerText = target.innerText
-        .split('')
-        .map((letter, index) => {
-          if (index < iteration) {
-            return datasetValue[index];
-          }
-          return this.letters[Math.floor(Math.random() * this.letters.length)];
-        })
-        .join('');
-
-      if (iteration >= datasetValue.length) {
-        clearInterval(this.interval);
-        this.interval = undefined;
-      }
-
+      target.innerText = this.getUpdatedText(originalText, iteration);
       iteration += 1 / 5;
+
+      if (iteration >= originalText.length) {
+        this.clearExistingInterval();
+      }
     }, 30) as unknown as number;
+  }
+
+  clearExistingInterval(): void {
+    if (this.interval !== undefined) {
+      clearInterval(this.interval);
+      this.interval = undefined;
+    }
+  }
+
+  getRandomLetter(): string {
+    return this.letters[Math.floor(Math.random() * this.letters.length)];
+  }
+
+  getUpdatedText(originalText: string, iteration: number): string {
+    return originalText
+      .split('')
+      .map((char, index) => (index < iteration ? char : this.getRandomLetter()))
+      .join('');
   }
 }

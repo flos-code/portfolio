@@ -11,6 +11,7 @@
   <div
     class="singleProject"
     *ngFor="let project of projects; let i = index"
+    [attr.id]="'singleProject' + i"
     (mouseenter)="onMouseEnter(i)"
     (mouseleave)="onMouseLeave()"
   >

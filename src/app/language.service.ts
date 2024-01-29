@@ -21,10 +21,10 @@ export class LanguageService {
 
   initializeLanguage(): void {
     if (isPlatformBrowser(this.platformId)) {
-      const savedLanguage = localStorage.getItem('preferredLanguage') || 'en';
+      let savedLanguage = localStorage.getItem('preferredLanguage') || 'en';
       this.setLanguage(savedLanguage);
     } else {
-      this.setLanguage('en'); // Default language for non-browser platforms
+      this.setLanguage('en');
     }
   }
 }

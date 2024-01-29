@@ -61,7 +61,7 @@ export class SkillsComponent {
     },
   ].map((skill) => ({
     ...skill,
-    animationDuration: this.getRandomDuration() + 'ms', // Assign random duration here
+    animationDuration: this.getRandomDuration() + 'ms',
   }));
 
   hoveredArrow: boolean = false;
@@ -89,8 +89,8 @@ export class SkillsComponent {
   @HostListener('window:scroll', ['$event'])
   checkScroll() {
     if (this.skillsContainer) {
-      const bottomElement = this.skillsContainer.nativeElement;
-      const rect = bottomElement.getBoundingClientRect();
+      let bottomElement = this.skillsContainer.nativeElement;
+      let rect = bottomElement.getBoundingClientRect();
 
       if (rect.top < window.innerHeight * 0.5 && rect.bottom >= 0) {
         this.isSectionVisible = true;
@@ -98,20 +98,18 @@ export class SkillsComponent {
     }
 
     if (this.skillsArrow) {
-      const bottomElement = this.skillsArrow.nativeElement;
-      const rect = bottomElement.getBoundingClientRect();
+      let bottomElement = this.skillsArrow.nativeElement;
+      let rect = bottomElement.getBoundingClientRect();
 
       if (rect.top < window.innerHeight * 0.5 && rect.bottom >= 0) {
-        // Element is in view
         this.hoveredArrow = true;
       } else {
-        // Element is not in view
         this.hoveredArrow = false;
       }
     }
   }
 
   getRandomDuration() {
-    return Math.random() * (750 - 150) + 150; // Random duration between 150ms and 750ms
+    return Math.random() * (750 - 150) + 150;
   }
 }

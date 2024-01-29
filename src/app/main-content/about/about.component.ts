@@ -35,8 +35,8 @@ export class AboutComponent {
   @HostListener('window:scroll', ['$event'])
   checkScroll() {
     if (this.aboutContainer) {
-      const bottomElement = this.aboutContainerBottom.nativeElement;
-      const rect = bottomElement.getBoundingClientRect();
+      let bottomElement = this.aboutContainerBottom.nativeElement;
+      let rect = bottomElement.getBoundingClientRect();
 
       if (rect.top < window.innerHeight * 1.5 && rect.bottom >= 0) {
         this.isSectionVisible = true;
@@ -44,8 +44,8 @@ export class AboutComponent {
     }
 
     if (this.aboutContainerBottom) {
-      const bottomElement = this.aboutContainerBottom.nativeElement;
-      const rect = bottomElement.getBoundingClientRect();
+      let bottomElement = this.aboutContainerBottom.nativeElement;
+      let rect = bottomElement.getBoundingClientRect();
 
       if (rect.top < window.innerHeight * 0.5 && rect.bottom >= 0) {
         this.hoveredArrow = true;

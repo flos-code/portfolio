@@ -27,11 +27,16 @@ export class MouseTrailComponent implements OnInit, OnDestroy {
 
   constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
 
+  /**
+   * with a mouse movement event listener the coordinates of the cursor gets tracked
+   * the coordinates gets tracked with 4 different delays
+   * the mouse trail elements gets placed at this delayed coordinates
+   */
   ngOnInit() {
     if (isPlatformBrowser(this.platformId)) {
-      const delays = [100, 150, 250, 350]; // Delays for each tail element
+      let delays = [100, 150, 250, 350];
       delays.forEach((delayTime, index) => {
-        const subscription = fromEvent<MouseEvent>(document, 'mousemove')
+        let subscription = fromEvent<MouseEvent>(document, 'mousemove')
           .pipe(delay(delayTime))
           .subscribe((e) => {
             this.coordinates[index] = { x: e.clientX, y: e.clientY };

@@ -67,21 +67,21 @@ export class HeaderComponent {
   }
 
   animateBurgerToX(): void {
-    let animationSteps: number = 5; // Assuming you want to show images 1 through 4
+    let animationSteps: number = 5;
     let i: number = 0;
-    const interval = setInterval(() => {
+    let interval = setInterval(() => {
       this.currentBurgerIndex = i;
       i++;
       if (i === animationSteps) {
         clearInterval(interval);
       }
-    }, 100); // Adjust the interval time (100ms) as needed
+    }, 100);
   }
 
   animateBurgerBack(): void {
-    let animationSteps: number = 9; // Assuming you want to show images 1 through 4
+    let animationSteps: number = 9;
     let i: number = 5;
-    const interval = setInterval(() => {
+    let interval = setInterval(() => {
       this.currentBurgerIndex = i;
       i++;
 
@@ -89,7 +89,7 @@ export class HeaderComponent {
         clearInterval(interval);
         this.currentBurgerIndex = 0;
       }
-    }, 100); // Adjust the interval time (100ms) as needed
+    }, 100);
   }
 
   copyEmailToClipboard(email: string): void {
@@ -97,7 +97,7 @@ export class HeaderComponent {
       .writeText(email)
       .then(() => {
         this.showCopyMessage = true;
-        setTimeout(() => (this.showCopyMessage = false), 3000); // Hide message after 3 seconds
+        setTimeout(() => (this.showCopyMessage = false), 3000);
       })
       .catch((err) => {
         console.error('Could not copy text: ', err);
@@ -107,46 +107,64 @@ export class HeaderComponent {
   ngAfterViewInit(): void {
     if (isPlatformBrowser(this.platformId)) {
       if (!('ontouchstart' in window || navigator.maxTouchPoints > 0)) {
-        const logo = this.logoElement.nativeElement;
+        let logo = this.logoElement.nativeElement;
         logo.onmouseover = (event: MouseEvent) => this.randomizeLetters(event);
       }
     }
   }
 
+  /**
+   * changes target text random letters one by one until the text goes back to original form
+   *
+   * @param {MouseEvent} event mouse event that triggers the randomization
+   */
   randomizeLetters(event: MouseEvent): void {
     let iteration = 0;
-    if (this.interval !== undefined) {
-      clearInterval(this.interval);
-    }
+    this.clearExistingInterval();
 
     this.interval = setInterval(() => {
-      const target = event.target as HTMLElement; // Cast event.target to HTMLElement
-
-      // Check if dataset['value'] is defined
-      const datasetValue = target.dataset['value'];
-      if (!datasetValue) {
-        clearInterval(this.interval);
-        this.interval = undefined;
+      let target = event.target as HTMLElement;
+      let originalText = target.dataset['value'];
+      if (!originalText) {
+        this.clearExistingInterval();
         return;
       }
 
-      target.innerText = target.innerText
-        .split('')
-        .map((letter, index) => {
-          if (index < iteration) {
-            return datasetValue[index];
-          }
-          return this.letters[Math.floor(Math.random() * this.letters.length)];
-        })
-        .join('');
-
-      if (iteration >= datasetValue.length) {
-        clearInterval(this.interval);
-        this.interval = undefined;
-      }
-
+      target.innerText = this.getUpdatedText(originalText, iteration);
       iteration += 1 / 5;
+
+      if (iteration >= originalText.length) {
+        this.clearExistingInterval();
+      }
     }, 30) as unknown as number;
+  }
+
+  clearExistingInterval(): void {
+    if (this.interval !== undefined) {
+      clearInterval(this.interval);
+      this.interval = undefined;
+    }
+  }
+
+  getRandomLetter(): string {
+    return this.letters[Math.floor(Math.random() * this.letters.length)];
+  }
+
+  /**
+   * originalText gelts splitted in an array with each character separately
+   * depending on whether the iteration is smaller than the current index in the generated
+   * array, the original character or a random character gets saved in the array
+   * the array gets converted back to one string
+   *
+   * @param {string} originalText original text that is being randomized.
+   * @param {number} iteration current step in the randomization
+   * @returns {string} the string with some random letters which will be displayed
+   */
+  getUpdatedText(originalText: string, iteration: number): string {
+    return originalText
+      .split('')
+      .map((char, index) => (index < iteration ? char : this.getRandomLetter()))
+      .join('');
   }
 
   switchLanguage(language: string): void {

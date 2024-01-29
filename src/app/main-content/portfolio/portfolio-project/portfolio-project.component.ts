@@ -1,5 +1,12 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input, HostListener } from '@angular/core';
+import {
+  Component,
+  Input,
+  HostListener,
+  ViewChildren,
+  QueryList,
+  ElementRef,
+} from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { TranslateModule } from '@ngx-translate/core';
 
@@ -17,16 +24,17 @@ export class PortfolioProjectComponent {
   constructor(public translate: TranslateService) {}
   isSectionOddVisible: boolean = false;
   isSectionEvenVisible: boolean = false;
-  @Input() project: any; // existing input
-  @Input() index: number = 0; // new input for the index
-  @Input() totalCount: number = 0; // new input for the total count
-  @Input() isHovered: boolean = false; // New input for hover state
+
+  @Input() project: any;
+  @Input() index: number = 0;
+  @Input() totalCount: number = 0;
+  @Input() isHovered: boolean = false;
 
   get hoverStateClass(): string {
     if (this.isHovered) {
-      return 'hoverState'; // Class when hovered
+      return 'hoverState';
     }
-    return 'nonHoverState'; // Class when not hovered
+    return 'nonHoverState';
   }
 
   @HostListener('window:scroll', ['$event'])
@@ -36,13 +44,11 @@ export class PortfolioProjectComponent {
   }
 
   checkSectionVisibility() {
-    const section = document.querySelector('.project-' + this.index);
-    if (section) {
-      const sectionTop = section.getBoundingClientRect().top;
-      const sectionHeight = section.clientHeight;
-      const windowHeight = window.innerHeight;
+    let singleProject = document.querySelector('.project-' + this.index);
+    if (singleProject) {
+      let rect = singleProject.getBoundingClientRect();
 
-      if (sectionTop <= windowHeight - sectionHeight / 3) {
+      if (rect.top < window.innerHeight * 0.8 && rect.bottom >= 0) {
         if ((this.index + 1) % 2 == 1) {
           this.isSectionOddVisible = true;
         } else {
@@ -59,7 +65,7 @@ export class PortfolioProjectComponent {
     ) {
       setTimeout(() => {
         this.isHovered = true;
-      }, 750); // Adjust the time based on your animation duration
+      }, 750);
     }
   }
 
