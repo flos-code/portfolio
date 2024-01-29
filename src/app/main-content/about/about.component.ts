@@ -27,6 +27,11 @@ export class AboutComponent {
     '/assets/img/arrow_left_01.png',
     '/assets/img/arrow_left_02.png',
   ];
+
+  /**
+   * slide in animation depending on the scroll position
+   * getBoundingClientRect() information about size and position of element in viewport
+   */
   @HostListener('window:scroll', ['$event'])
   checkScroll() {
     if (this.aboutContainer) {
@@ -43,10 +48,8 @@ export class AboutComponent {
       const rect = bottomElement.getBoundingClientRect();
 
       if (rect.top < window.innerHeight * 0.5 && rect.bottom >= 0) {
-        // Element is in view
         this.hoveredArrow = true;
       } else {
-        // Element is not in view
         this.hoveredArrow = false;
       }
     }

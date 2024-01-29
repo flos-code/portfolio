@@ -42,9 +42,9 @@ export class ContactComponent {
   inputEmail: string = '';
   inputMessage: string = '';
   privacyPolicyChecked: boolean = false;
+  messageSend: boolean = false;
 
   isNameValid(name: string): boolean {
-    // Überprüfe, ob der Name nur Buchstaben und Leerzeichen enthält
     const regex = /^[a-zA-Z\sÖÄÜöäüß]*$/;
     return regex.test(name);
   }
@@ -55,33 +55,44 @@ export class ContactComponent {
   }
 
   async sendMail() {
-    let nameField = this.nameField.nativeElement;
-    let emailField = this.emailField.nativeElement;
-    let messageField = this.messageField.nativeElement;
-    let sendButton = this.sendButton.nativeElement;
+    this.setFormFieldsDisabled(true);
+    let formData = new FormData();
+    formData.append('name', this.nameField.nativeElement.value);
+    formData.append('email', this.emailField.nativeElement.value);
+    formData.append('message', this.messageField.nativeElement.value);
+    try {
+      await fetch('https://scholz-florian.com/send_mail/send_mail.php', {
+        method: 'POST',
+        body: formData,
+      });
+      this.showSubmitFeedback();
+      this.resetFormFields();
+    } catch (error) {
+      console.error('Error sending email:', error);
+    } finally {
+      this.setFormFieldsDisabled(false);
+    }
+  }
 
-    nameField.disabled = true;
-    emailField.disabled = true;
-    messageField.disabled = true;
-    sendButton.disabled = true;
-    //sendeanimation
-    let fd = new FormData();
-    fd.append('name', nameField.value);
-    fd.append('email', emailField.value);
-    fd.append('message', messageField.value);
-    await fetch('https://scholz-florian.com/send_mail/send_mail.php', {
-      method: 'POST',
-      body: fd,
-    });
-    //text anzegien nachtricht gesendet
-    nameField.disabled = false;
-    emailField.disabled = false;
-    messageField.disabled = false;
-    sendButton.disabled = false;
+  setFormFieldsDisabled(disabled: boolean) {
+    this.nameField.nativeElement.disabled = disabled;
+    this.emailField.nativeElement.disabled = disabled;
+    this.messageField.nativeElement.disabled = disabled;
+    this.sendButton.nativeElement.disabled = disabled;
+  }
 
-    nameField.value = '';
-    emailField.value = '';
-    messageField.value = '';
+  resetFormFields() {
+    this.nameField.nativeElement.value = '';
+    this.emailField.nativeElement.value = '';
+    this.messageField.nativeElement.value = '';
     this.privacyPolicyChecked = false;
+  }
+
+  showSubmitFeedback() {
+    this.messageSend = true;
+
+    setTimeout(() => {
+      this.messageSend = false;
+    }, 5000);
   }
 }

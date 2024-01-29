@@ -1,4 +1,10 @@
 @media screen and (max-width: 839px) {
+  .contactContainer {
+    .submitFeedback {
+      width: 480px;
+      bottom: 12px;
+    }
+  }
   .contactForm {
     width: 480px;
   }
@@ -11,6 +17,13 @@
 }
 
 @media screen and (max-width: 599px) {
+  .contactContainer {
+    .submitFeedback {
+      width: 360px;
+      bottom: 0;
+      padding: 16px 32px;
+    }
+  }
   .contactForm {
     width: 360px;
   }
@@ -27,6 +40,13 @@
 }
 
 @media screen and (max-width: 479px) {
+  .contactContainer {
+    .submitFeedback {
+      width: 280px;
+      bottom: 8;
+      padding: 24px 16px;
+    }
+  }
   .contactForm {
     width: 280px;
     gap: 24px;
