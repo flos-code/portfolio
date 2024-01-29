@@ -60,6 +60,7 @@ export class ContactComponent {
     formData.append('name', this.nameField.nativeElement.value);
     formData.append('email', this.emailField.nativeElement.value);
     formData.append('message', this.messageField.nativeElement.value);
+    formData.append('preferredLanguage', this.getPreferredLanguage());
     try {
       await fetch('https://scholz-florian.com/send_mail/send_mail.php', {
         method: 'POST',
@@ -94,5 +95,9 @@ export class ContactComponent {
     setTimeout(() => {
       this.messageSend = false;
     }, 5000);
+  }
+
+  getPreferredLanguage(): string {
+    return localStorage.getItem('preferredLanguage') || 'en';
   }
 }
