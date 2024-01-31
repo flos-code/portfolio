@@ -24,6 +24,7 @@ export class MouseTrailComponent implements OnInit, OnDestroy {
     { x: 0, y: 0 },
   ];
   subscriptions: Subscription[] = [];
+  isMobile: boolean = false;
 
   constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
 
@@ -33,6 +34,7 @@ export class MouseTrailComponent implements OnInit, OnDestroy {
    * the mouse trail elements gets placed at this delayed coordinates
    */
   ngOnInit() {
+    this.checkIfMobileDevice();
     if (isPlatformBrowser(this.platformId)) {
       let delays = [100, 150, 250, 350];
       delays.forEach((delayTime, index) => {
@@ -48,5 +50,20 @@ export class MouseTrailComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.subscriptions.forEach((subscription) => subscription.unsubscribe());
+  }
+
+  checkIfMobileDevice() {
+    if (isPlatformBrowser(this.platformId)) {
+      this.isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    }
+  }
+
+  generateClassNames(index: number) {
+    let classes = {
+      tailDefault: true,
+      ['tail' + index]: true, // Dynamically adding a class based on index
+      isMobile: this.isMobile,
+    };
+    return classes;
   }
 }
