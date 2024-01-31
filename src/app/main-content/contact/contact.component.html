@@ -126,7 +126,10 @@
       required
     >
       {{ "I've read the" | translate }}
-      <a [class.privacyPolicyLink]="privacyPolicyChecked" href="privacy-policy">
+      <a
+        [class.privacyPolicyLink]="privacyPolicyChecked"
+        routerLink="/privacy-policy"
+      >
         {{ "privacy policy" | translate }}</a
       >
       {{ "and agree to the processing of my data as outlined." | translate }}

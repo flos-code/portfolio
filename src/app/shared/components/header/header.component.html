@@ -80,13 +80,13 @@
 
       <div class="menuBottomLegal">
         <div class="legalLinks">
-          <a href="privacy-policy"
+          <a routerLink="/privacy-policy" (click)="toggleMenu()"
             ><span>{{ "Privacy Policy" | translate }}</span>
             <div></div
           ></a>
         </div>
         <div class="legalLinks">
-          <a href="imprint"
+          <a routerLink="/imprint" (click)="toggleMenu()"
             ><span>{{ "Legal Notice" | translate }}</span>
             <div></div
           ></a>

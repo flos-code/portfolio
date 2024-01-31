@@ -9,6 +9,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { TranslateService } from '@ngx-translate/core';
 import { TranslateModule } from '@ngx-translate/core';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-contact',
@@ -23,6 +24,7 @@ import { TranslateModule } from '@ngx-translate/core';
     MatIconModule,
     MatCheckboxModule,
     TranslateModule,
+    RouterModule,
   ],
   templateUrl: './contact.component.html',
   styleUrls: [

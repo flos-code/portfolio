@@ -1,0 +1,15 @@
+:target::before {
+  content: "";
+  display: block;
+  height: 110px; /* Height of fixed header */
+  margin: -110px 0 0; /* Negative height of fixed header */
+}
+
+@media screen and (max-width: 599px) {
+  :target::before {
+    content: "";
+    display: block;
+    height: 94px; /* Height of fixed header */
+    margin: -94px 0 0; /* Negative height of fixed header */
+  }
+}

@@ -6,13 +6,14 @@ import {
   PLATFORM_ID,
   ViewChild,
 } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-footer',
   standalone: true,
-  imports: [CommonModule, TranslateModule],
+  imports: [CommonModule, TranslateModule, RouterModule],
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.scss', './footer.component-mediaquery.scss'],
 })

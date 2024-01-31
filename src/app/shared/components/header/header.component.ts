@@ -15,6 +15,7 @@ import { LanguageService } from './../../../language.service';
 
 import { TranslateService } from '@ngx-translate/core';
 import { TranslateModule } from '@ngx-translate/core';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -25,6 +26,7 @@ import { TranslateModule } from '@ngx-translate/core';
     MatMenuModule,
     MatIconModule,
     TranslateModule,
+    RouterModule,
   ],
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss', './header.component-mediaquery.scss'],
