@@ -73,4 +73,8 @@ export class FooterComponent {
       .map((char, index) => (index < iteration ? char : this.getRandomLetter()))
       .join('');
   }
+
+  scrollToTop() {
+    window.scrollTo(0, 0);
+  }
 }

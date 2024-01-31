@@ -172,4 +172,16 @@ export class HeaderComponent {
   switchLanguage(language: string): void {
     this.languageService.setLanguage(language);
   }
+
+  scrollToTop() {
+    window.scrollTo(0, 0);
+  }
+  scrollTo(elementId: string) {
+    setTimeout(() => {
+      const element = document.getElementById(elementId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 0);
+  }
 }

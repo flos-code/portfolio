@@ -102,4 +102,8 @@ export class ContactComponent {
   getPreferredLanguage(): string {
     return localStorage.getItem('preferredLanguage') || 'en';
   }
+
+  scrollToTop() {
+    window.scrollTo(0, 0);
+  }
 }

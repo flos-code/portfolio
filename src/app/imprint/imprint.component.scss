@@ -3,7 +3,8 @@
 .imprintContainer {
   flex-direction: column;
   padding-top: 110px;
-  height: calc(100vh - 254px);
+
+  min-height: calc(100vh - 254px);
 
   h1 {
     font-size: 32px;

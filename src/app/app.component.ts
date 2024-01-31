@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterEvent, RouterOutlet } from '@angular/router';
+import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './shared/components/header/header.component';
 import { FooterComponent } from './shared/components/footer/footer.component';
 import { MouseTrailComponent } from './shared/components/mouse-trail/mouse-trail.component';
@@ -8,6 +8,7 @@ import { MainContentComponent } from './main-content/main-content.component';
 import { ImprintComponent } from './imprint/imprint.component';
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 import { LanguageService } from './language.service';
+import { routes } from './app.routes';
 
 @Component({
   selector: 'app-root',
