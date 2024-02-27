@@ -35,7 +35,7 @@ export class PortfolioComponent {
       usedTools: ['HTML', 'CSS', 'JS'],
       descriptionKey: 'projectDescriptionJoin',
 
-      liveLink: 'https://scholz-florian.com/Join/',
+      liveLink: 'https://join.scholz-florian.com/',
       githubLink: 'https://github.com/flos-code/Join',
     },
     {
@@ -43,7 +43,7 @@ export class PortfolioComponent {
       imgPath: '/assets/img/project_sharkie.jpg',
       usedTools: ['HTML', 'CSS', 'JS'],
       descriptionKey: 'projectDescriptionSharkie',
-      liveLink: 'https://scholz-florian.com/Sharkie/',
+      liveLink: 'https://sharkie.scholz-florian.com/',
       githubLink: 'https://github.com/flos-code/Sharkie',
     },
   ];
