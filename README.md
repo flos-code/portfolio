@@ -16,6 +16,6 @@
 <h3 align='center'>Home Page 🏡</h3>
 
 <div align='center'>
-<img src='https://github.com/flos-code/portfolio/assets/148456982/ea1a881d-879c-4e8d-865b-a86ae69b7e50'/>
+<img src='https://github.com/flos-code/portfolio/assets/148456982/bc275fab-71c1-46c2-9339-2a95ebff7517'/>
 
 </div>
