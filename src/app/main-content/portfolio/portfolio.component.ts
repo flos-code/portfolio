@@ -30,13 +30,12 @@ export class PortfolioComponent {
 
   projects = [
     {
-      name: 'Join',
-      imgPath: '/assets/img/project_join.jpg',
-      usedTools: ['HTML', 'CSS', 'JS'],
-      descriptionKey: 'projectDescriptionJoin',
-
-      liveLink: 'https://join.scholz-florian.com/',
-      githubLink: 'https://github.com/flos-code/Join',
+      name: 'DABubble',
+      imgPath: '/assets/img/project_dabubble.jpg',
+      usedTools: ['Angular', 'TypeScript', 'Firebase'],
+      descriptionKey: 'projectDescriptionDABubble',
+      liveLink: 'https://dabubble.scholz-florian.com/',
+      githubLink: 'https://github.com/flos-code/DA-Bubble',
     },
     {
       name: 'Sharkie',
@@ -45,6 +44,15 @@ export class PortfolioComponent {
       descriptionKey: 'projectDescriptionSharkie',
       liveLink: 'https://sharkie.scholz-florian.com/',
       githubLink: 'https://github.com/flos-code/Sharkie',
+    },
+    {
+      name: 'Join',
+      imgPath: '/assets/img/project_join.jpg',
+      usedTools: ['HTML', 'CSS', 'JS'],
+      descriptionKey: 'projectDescriptionJoin',
+
+      liveLink: 'https://join.scholz-florian.com/',
+      githubLink: 'https://github.com/flos-code/Join',
     },
   ];
   hoveredProjectIndex: number | null = null;
