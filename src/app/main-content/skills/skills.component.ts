@@ -44,7 +44,7 @@ export class SkillsComponent {
       imgPath: '/assets/icons/scrum.svg',
     },
     {
-      name: 'Typescript',
+      name: 'TypeScript',
       imgPath: '/assets/icons/typescript.svg',
     },
     {

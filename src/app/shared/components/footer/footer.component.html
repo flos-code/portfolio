@@ -21,11 +21,19 @@
           <img src="/assets/icons/linkedin_icon.svg" alt="Linkedin Link" />
         </a>
       </div>
-      <div class="legalNotice">
-        <a routerLink="/imprint" (click)="scrollToTop()"
-          ><span> {{ "Legal Notice" | translate }}</span>
-          <div></div
-        ></a>
+      <div class="footerLinks">
+        <div class="legalNotice">
+          <a routerLink="/privacy-policy" (click)="scrollToTop()"
+            ><span> {{ "Privacy Policy" | translate }}</span>
+            <div></div
+          ></a>
+        </div>
+        <div class="legalNotice">
+          <a routerLink="/imprint" (click)="scrollToTop()"
+            ><span> {{ "Legal Notice" | translate }}</span>
+            <div></div
+          ></a>
+        </div>
       </div>
     </div>
   </div>
